@@ -38,6 +38,47 @@ test("unsure answer is accepted and builder keeps moving", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Picture your first customer" })).toBeVisible();
 });
 
+test("typing partial ZIP code values on location step does not crash", async ({ page }) => {
+  await page.getByRole("button", { name: "Start from scratch" }).click();
+  await page.locator(".vf-question-card textarea").fill("A record store near campus.");
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Picture your first customer" })).toBeVisible();
+  await page.locator(".vf-question-card textarea").fill("College students near campus");
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+
+  await expect(page.getByRole("heading", { name: "Choose where the business happens" })).toBeVisible();
+  await page.getByRole("button", { name: "Customers visit me" }).click();
+  await page.getByLabel("City").fill("Tempe");
+  await page.getByLabel("County").fill("Maricopa");
+  await page.getByLabel("State").fill("AZ");
+  const zipInput = page.getByLabel("ZIP code");
+  const nextButton = page.getByRole("button", { name: "Next", exact: true });
+
+  await zipInput.fill("");
+  await expect(page.getByRole("heading", { name: "Choose where the business happens" })).toBeVisible();
+  await expect(page.getByText("Add a 5-digit ZIP code before continuing.")).toBeVisible();
+  await expect(nextButton).toBeDisabled();
+
+  for (const partialZip of ["8", "85", "8538"]) {
+    await zipInput.fill(partialZip);
+    await expect(page.getByRole("heading", { name: "Choose where the business happens" })).toBeVisible();
+    await expect(page.getByText("Keep typing until the ZIP code has exactly 5 digits.")).toBeVisible();
+    await expect(nextButton).toBeDisabled();
+  }
+
+  await zipInput.fill("abc");
+  await expect(zipInput).toHaveValue("");
+  await expect(page.getByText("Add a 5-digit ZIP code before continuing.")).toBeVisible();
+  await expect(nextButton).toBeDisabled();
+
+  await zipInput.fill("85381");
+  await expect(page.getByText("Keep typing until the ZIP code has exactly 5 digits.")).toHaveCount(0);
+  await expect(nextButton).toBeEnabled();
+  await nextButton.click();
+  await expect(page.getByRole("heading", { name: "Describe what you will sell" })).toBeVisible();
+  await expect(page.getByText(/ZodError|Invalid input|Application error|This page could not be found/i)).toHaveCount(0);
+});
+
 test("sensitive pasted text is blocked and can be replaced", async ({ page }) => {
   await page.getByRole("button", { name: "Start from scratch" }).click();
   const ideaBox = page.locator(".vf-question-card textarea");

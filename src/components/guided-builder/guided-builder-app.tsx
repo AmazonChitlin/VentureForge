@@ -169,6 +169,9 @@ export function GuidedBuilderApp({ projectId }: { projectId: string }) {
   );
   const progress = GuidedProgressService.getProgress(state);
   const step = progress.currentStep;
+  const locationZipMessage = step.id === "location_model"
+    ? getLocationZipValidationMessage(state)
+    : "";
 
   function updateAnswer(
     field: string,
@@ -247,7 +250,7 @@ export function GuidedBuilderApp({ projectId }: { projectId: string }) {
       />
     ) : (
       <GuidedStepLayout
-        canContinue={progress.canContinue}
+        canContinue={progress.canContinue && !locationZipMessage}
         canGoBack={state.currentStepIndex > 0}
         canSkip={Boolean(step.question?.canSkip)}
         onBack={() => setState((current) => GuidedProgressService.back(current))}
@@ -541,6 +544,7 @@ function LocationQuestion({
   step: GuidedStep;
   updateAnswer: (field: string, value: GuidedAnswerValue) => void;
 }) {
+  const zipMessage = getLocationZipValidationMessage(state);
   return (
     <>
       <SmartChoiceCards
@@ -552,8 +556,13 @@ function LocationQuestion({
         <Input helpText="Helps narrow local research." label="City" value={stringAnswer(state, "city")} onChange={(value) => updateAnswer("city", value)} placeholder="Tempe" />
         <Input helpText="Some setup rules change by county." label="County" value={stringAnswer(state, "county")} onChange={(value) => updateAnswer("county", value)} placeholder="Maricopa" />
         <Input helpText="Use a two-letter code, such as AZ." label="State" value={stringAnswer(state, "state")} onChange={(value) => updateAnswer("state", value.toUpperCase().slice(0, 2))} placeholder="AZ" />
-        <Input helpText="Helps narrow neighborhood research." label="ZIP code" value={stringAnswer(state, "zipCode")} onChange={(value) => updateAnswer("zipCode", value.replace(/\D/g, "").slice(0, 5))} placeholder="85281" />
+        <Input helpText="Numbers only. Enter five digits when you know them." label="ZIP code" value={stringAnswer(state, "zipCode")} onChange={(value) => updateAnswer("zipCode", value.replace(/\D/g, "").slice(0, 5))} placeholder="85281" />
       </div>
+      {zipMessage ? (
+        <FriendlyWarning title="ZIP code needed">
+          {zipMessage}
+        </FriendlyWarning>
+      ) : null}
     </>
   );
 }
@@ -730,6 +739,22 @@ function BooleanChoice({ label, value, onChange, helpText }: { label: string; va
 function stringAnswer(state: GuidedBuilderState, field: string): string {
   const value = state.answers[field]?.structuredValue;
   return typeof value === "string" ? value : "";
+}
+
+function getLocationZipValidationMessage(state: GuidedBuilderState): string {
+  const zipCode = stringAnswer(state, "zipCode");
+  const hasStartedLocation =
+    Boolean(stringAnswer(state, "businessModel")) ||
+    Boolean(stringAnswer(state, "city")) ||
+    Boolean(stringAnswer(state, "county")) ||
+    Boolean(stringAnswer(state, "state")) ||
+    Boolean(zipCode);
+  if (!hasStartedLocation) return "";
+  if (/^\d{5}$/.test(zipCode)) return "";
+  if (zipCode.length === 0) {
+    return "Add a 5-digit ZIP code before continuing. This helps VentureForge use the right local planning details.";
+  }
+  return "Keep typing until the ZIP code has exactly 5 digits.";
 }
 
 function numberAnswer(state: GuidedBuilderState, field: string): number {

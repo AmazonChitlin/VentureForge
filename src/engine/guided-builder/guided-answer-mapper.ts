@@ -92,10 +92,12 @@ export const GuidedAnswerMapper = {
 
   mapAnswers(answers: Record<string, GuidedAnswer>): GuidedAnswerMapping {
     const parsedAnswers = Object.fromEntries(
-      Object.entries(answers).map(([field, answer]) => [
-        field,
-        GuidedAnswerSchema.parse(answer),
-      ]),
+      Object.entries(answers)
+        .map(([field, answer]) => {
+          const parsed = GuidedAnswerSchema.safeParse(answer);
+          return parsed.success ? [field, parsed.data] : undefined;
+        })
+        .filter((entry): entry is [string, GuidedAnswer] => Boolean(entry)),
     );
     const ideaDescription = textValue(parsedAnswers, "businessIdea");
     const hints = inferHints(ideaDescription);
@@ -114,7 +116,7 @@ export const GuidedAnswerMapper = {
     const weeklySales = numberValue(parsedAnswers, "weeklySales");
     const regulatedActivities = listValue(parsedAnswers, "regulatedActivities");
 
-    const founder = FounderIntakeSchema.parse({
+    const founder = parseFounderDraft({
       founderName: textValue(parsedAnswers, "founderName"),
       founderExperience: textValue(parsedAnswers, "founderExperience"),
       skills: listValue(parsedAnswers, "skills"),
@@ -138,7 +140,7 @@ export const GuidedAnswerMapper = {
     const productOrService =
       textValue(parsedAnswers, "productOrService") ||
       hints.possibleRevenueStreams.join(", ");
-    const idea = BusinessIdeaIntakeSchema.parse({
+    const idea = parseBusinessIdeaDraft({
       businessName: textValue(parsedAnswers, "businessName"),
       businessIdea: ideaDescription,
       productOrService,
@@ -148,9 +150,9 @@ export const GuidedAnswerMapper = {
         textValue(parsedAnswers, "targetCustomer") || hints.targetCustomerHint,
       city: textValue(parsedAnswers, "city") || hints.city,
       county: textValue(parsedAnswers, "county"),
-      state: textValue(parsedAnswers, "state") || hints.state,
-      zipCode: textValue(parsedAnswers, "zipCode"),
-      businessModel,
+      state: stateForIntake(textValue(parsedAnswers, "state") || hints.state),
+      zipCode: zipCodeForIntake(textValue(parsedAnswers, "zipCode")),
+      businessModel: businessModelForIntake(businessModel),
       industry: textValue(parsedAnswers, "industry") || hints.industry,
       naicsGuess: textValue(parsedAnswers, "naicsGuess"),
       knownCompetitors: splitOrList(parsedAnswers, "knownCompetitors"),
@@ -172,9 +174,9 @@ export const GuidedAnswerMapper = {
         ? `Starter website with a ${textValue(parsedAnswers, "websiteTone")} tone.`
         : "",
     });
-    const intake = FounderBusinessIntakeSchema.parse({ founder, idea });
+    const intake = parseFounderBusinessDraft({ founder, idea });
 
-    const financialAssumptions = FinancialEngineInputSchema.parse({
+    const financialAssumptions = parseFinancialDraft({
       startupCosts: valueOrUndefined(startupCosts),
       equipment: valueOrUndefined(numberValue(parsedAnswers, "equipmentCost")),
       inventory: valueOrUndefined(numberValue(parsedAnswers, "inventoryCost")),
@@ -369,6 +371,41 @@ function normalizeValue(value: GuidedAnswerValue): GuidedAnswerValue {
   // trim later through textValue(), but controlled inputs need trailing spaces
   // to remain intact so normal multi-word typing works.
   return value;
+}
+
+function zipCodeForIntake(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 5);
+  return /^\d{5}$/.test(digits) ? digits : "";
+}
+
+function stateForIntake(value: string): string {
+  const stateCode = value.replace(/[^A-Za-z]/g, "").slice(0, 2).toUpperCase();
+  return /^[A-Z]{2}$/.test(stateCode) ? stateCode : "";
+}
+
+function businessModelForIntake(value: string): string {
+  const parsed = BusinessIdeaIntakeSchema.shape.businessModel.safeParse(value);
+  return parsed.success ? parsed.data : "";
+}
+
+function parseFounderDraft(input: unknown) {
+  const parsed = FounderIntakeSchema.safeParse(input);
+  return parsed.success ? parsed.data : FounderIntakeSchema.parse({});
+}
+
+function parseBusinessIdeaDraft(input: unknown) {
+  const parsed = BusinessIdeaIntakeSchema.safeParse(input);
+  return parsed.success ? parsed.data : BusinessIdeaIntakeSchema.parse({});
+}
+
+function parseFounderBusinessDraft(input: unknown) {
+  const parsed = FounderBusinessIntakeSchema.safeParse(input);
+  return parsed.success ? parsed.data : FounderBusinessIntakeSchema.parse({});
+}
+
+function parseFinancialDraft(input: unknown) {
+  const parsed = FinancialEngineInputSchema.safeParse(input);
+  return parsed.success ? parsed.data : FinancialEngineInputSchema.parse({});
 }
 
 function sum(values: number[]): number {

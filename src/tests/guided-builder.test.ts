@@ -53,6 +53,42 @@ test("guided text answers preserve spaces while a user is typing", () => {
   assert.equal(mapping.intake.idea.businessIdea, "A punk record store");
 });
 
+test("partial ZIP code drafts do not crash live answer mapping", () => {
+  for (const zipCode of ["", "8", "85", "8538"]) {
+    const mapping = GuidedAnswerMapper.mapAnswers({
+      businessModel: answer("businessModel", "location_model", "physical_location"),
+      state: answer("state", "location_model", "AZ"),
+      zipCode: answer("zipCode", "location_model", zipCode),
+    });
+
+    assert.equal(mapping.intake.idea.zipCode, "");
+  }
+});
+
+test("complete ZIP code maps into strict intake data", () => {
+  const mapping = GuidedAnswerMapper.mapAnswers({
+    businessModel: answer("businessModel", "location_model", "physical_location"),
+    state: answer("state", "location_model", "AZ"),
+    zipCode: answer("zipCode", "location_model", "85381"),
+  });
+
+  assert.equal(mapping.intake.idea.zipCode, "85381");
+});
+
+test("invalid draft answer records are ignored instead of throwing during render mapping", () => {
+  const mapping = GuidedAnswerMapper.mapAnswers({
+    zipCode: {
+      field: "",
+      rawValue: "8",
+      structuredValue: "8",
+      isUnsure: false,
+      updatedAt: "",
+    },
+  } as any);
+
+  assert.equal(mapping.intake.idea.zipCode, "");
+});
+
 test("unsure answer stays unknown and creates missing information", () => {
   const targetCustomer = answer(
     "targetCustomer",
