@@ -3,6 +3,8 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { hashPassword, verifyPassword } from "../lib/auth/password";
+import { signupAction } from "../lib/auth/actions";
+import { safeCallbackUrl } from "../lib/auth/schemas";
 import {
   credentialsProviderIdentity,
   upsertAuthenticatedUser,
@@ -88,3 +90,85 @@ test("protected route layouts call the authenticated user helper", async () => {
     assert.match(contents, /requireCurrentUser/);
   }
 });
+
+test("signup callback URLs are restricted to safe internal destinations", () => {
+  assert.equal(safeCallbackUrl(undefined), "/dashboard");
+  assert.equal(safeCallbackUrl("/dashboard"), "/dashboard");
+  assert.equal(safeCallbackUrl("/project/new"), "/project/new");
+  assert.equal(safeCallbackUrl("/project/abc_123-builder/builder"), "/project/abc_123-builder/builder");
+  assert.equal(safeCallbackUrl("/project/abc_123/overview"), "/dashboard");
+  assert.equal(safeCallbackUrl("/api/projects"), "/dashboard");
+  assert.equal(safeCallbackUrl("https://example.com/dashboard"), "/dashboard");
+  assert.equal(safeCallbackUrl("//example.com/dashboard"), "/dashboard");
+});
+
+test(
+  "signup server action creates an account and returns a safe result instead of throwing",
+  { skip: databaseAvailable ? false : "Set DATABASE_URL to run signup action coverage." },
+  async () => {
+    const email = `signup-action-${Date.now()}@ventureforge.test`;
+    try {
+      const result = await signupAction(signupFormData({
+        callbackUrl: "https://malicious.example/bad",
+        email,
+        name: "Signup Action Tester",
+        password: "signup-password-123",
+      }));
+
+      assert.equal(result.ok, true);
+      assert.match(result.redirectTo ?? "", /\/dashboard|\/login\?error=created-account/);
+      const created = await prisma.user.findUnique({
+        select: { email: true },
+        where: { email },
+      });
+      assert.equal(created?.email, email);
+    } finally {
+      await prisma.user.deleteMany({ where: { email } });
+      await prisma.$disconnect();
+    }
+  },
+);
+
+test(
+  "duplicate signup returns a friendly result and does not throw",
+  { skip: databaseAvailable ? false : "Set DATABASE_URL to run duplicate signup coverage." },
+  async () => {
+    const email = `duplicate-signup-${Date.now()}@ventureforge.test`;
+    try {
+      const first = await signupAction(signupFormData({
+        callbackUrl: "/dashboard",
+        email,
+        name: "Duplicate Signup",
+        password: "signup-password-123",
+      }));
+      assert.equal(first.ok, true);
+
+      const duplicate = await signupAction(signupFormData({
+        callbackUrl: "/dashboard",
+        email,
+        name: "Duplicate Signup",
+        password: "signup-password-123",
+      }));
+      assert.equal(duplicate.ok, false);
+      assert.match(duplicate.message ?? "", /already has an account/i);
+      assert.match(duplicate.fieldErrors?.email ?? "", /already has an account/i);
+    } finally {
+      await prisma.user.deleteMany({ where: { email } });
+      await prisma.$disconnect();
+    }
+  },
+);
+
+function signupFormData(input: {
+  callbackUrl: string;
+  email: string;
+  name: string;
+  password: string;
+}) {
+  const formData = new FormData();
+  formData.set("callbackUrl", input.callbackUrl);
+  formData.set("email", input.email);
+  formData.set("name", input.name);
+  formData.set("password", input.password);
+  return formData;
+}

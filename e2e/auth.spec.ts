@@ -4,6 +4,7 @@ import {
   createAuthenticatedProject,
   signInTestUser,
   signUpTestUser,
+  TEST_PASSWORD,
 } from "./auth-helpers";
 
 test("unauthenticated users are redirected from the dashboard", async ({ page }) => {
@@ -25,6 +26,37 @@ test("logout prevents access to protected project routes", async ({ page }, test
 
   await page.goto("/dashboard");
   await expect(page).toHaveURL(/\/login\?callbackUrl=/);
+});
+
+test("successful signup does not show a 404 and reaches a safe destination", async ({ page }, testInfo) => {
+  const email = testEmail(testInfo.title, testInfo.workerIndex);
+  await page.goto("/signup?callbackUrl=https%3A%2F%2Fevil.example%2Fbad");
+  await page.getByLabel("Name").fill("Production Signup Tester");
+  await page.getByLabel("Email").fill(email);
+  await page.getByLabel("Password").fill(TEST_PASSWORD);
+  await page.getByRole("button", { name: "Create account" }).click();
+
+  await expect(page).toHaveURL(/\/dashboard|\/login\?error=created-account/);
+  await expect(page.getByText(/404|This page could not be found|server error|application error/i)).toHaveCount(0);
+});
+
+test("duplicate signup shows a friendly message instead of a 404", async ({ page }, testInfo) => {
+  const email = await signUpTestUser(page, {
+    ...testInfo,
+    title: `${testInfo.title} initial account`,
+  });
+  await page.getByRole("button", { name: "Log out" }).click();
+  await expect(page).toHaveURL(/\/$/);
+
+  await page.goto(`/signup?callbackUrl=${encodeURIComponent("/dashboard")}`);
+  await page.getByLabel("Name").fill("Duplicate Signup Tester");
+  await page.getByLabel("Email").fill(email);
+  await page.getByLabel("Password").fill(TEST_PASSWORD);
+  await page.getByRole("button", { name: "Create account" }).click();
+
+  await expect(page).toHaveURL(/\/signup/);
+  await expect(page.getByText("That email already has an account. Try signing in.").first()).toBeVisible();
+  await expect(page.getByText(/404|This page could not be found|server error|application error/i)).toHaveCount(0);
 });
 
 test("users cannot access another user's project by guessing the project ID", async ({ page }, testInfo) => {
@@ -99,4 +131,9 @@ async function expectNoProjectAccess(responsePromise: Promise<{ status(): number
   expect(response.status()).toBe(404);
   const payload = await response.json();
   expect(payload.error).toBe("Project not found or you do not have access to it.");
+}
+
+function testEmail(title: string, workerIndex: number) {
+  const safeTitle = title.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+  return `${safeTitle}-${Date.now()}-${workerIndex}@ventureforge.test`;
 }

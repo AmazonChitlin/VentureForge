@@ -11,7 +11,21 @@ export const SignUpSchema = SignInSchema.extend({
 
 export function safeCallbackUrl(value: FormDataEntryValue | string | null | undefined): string {
   if (typeof value !== "string" || !value.trim()) return "/dashboard";
-  if (!value.startsWith("/") || value.startsWith("//")) return "/dashboard";
-  if (value.startsWith("/api/")) return "/dashboard";
-  return value;
+  const trimmed = value.trim();
+  if (!trimmed.startsWith("/") || trimmed.startsWith("//")) return "/dashboard";
+
+  try {
+    const parsed = new URL(trimmed, "https://ventureforge.local");
+    if (parsed.origin !== "https://ventureforge.local") return "/dashboard";
+    if (parsed.pathname === "/dashboard" || parsed.pathname === "/project/new") {
+      return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+    }
+    if (/^\/project\/[A-Za-z0-9_-]+\/builder$/.test(parsed.pathname)) {
+      return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+    }
+  } catch {
+    return "/dashboard";
+  }
+
+  return "/dashboard";
 }

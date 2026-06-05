@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-import { signupAction } from "@/lib/auth/actions";
+import { SignupForm } from "@/components/auth/signup-form";
 import { getCurrentUser } from "@/lib/auth/getCurrentUser";
 import { safeCallbackUrl } from "@/lib/auth/schemas";
 
@@ -30,25 +30,7 @@ export default async function SignupPage({
         <h1>Save your business-building work.</h1>
         <p>Create a local VentureForge account so your projects belong to you and stay available after restart.</p>
         {error ? <p className="vf-workspace-error">{errorMessages[error] ?? "Please check the form and try again."}</p> : null}
-        <form action={signupAction} className="vf-workspace-form">
-          <input name="callbackUrl" type="hidden" value={callbackUrl} />
-          <label>
-            Name
-            <small>This is only shown inside your account.</small>
-            <input autoComplete="name" name="name" required />
-          </label>
-          <label>
-            Email
-            <small>Use an email you can remember for local testing.</small>
-            <input autoComplete="email" name="email" required type="email" />
-          </label>
-          <label>
-            Password
-            <small>Use at least 8 characters. Do not reuse an important password for local testing.</small>
-            <input autoComplete="new-password" name="password" required type="password" />
-          </label>
-          <button className="vf-button vf-button-primary" type="submit">Create account</button>
-        </form>
+        <SignupForm callbackUrl={callbackUrl} />
         <p>
           Already have an account? <Link href={`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`}>Log in</Link>
         </p>
