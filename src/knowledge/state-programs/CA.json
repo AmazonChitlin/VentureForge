@@ -1,0 +1,678 @@
+{
+  "stateCode": "CA",
+  "stateName": "California",
+  "entityFormationAgency": {
+    "agencyName": "California Secretary of State",
+    "url": "https://www.sos.ca.gov/business-programs/bizfile/",
+    "description": "California bizfile business entity starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "taxAgency": {
+    "agencyName": "California Tax Service Center",
+    "url": "https://www.taxes.ca.gov/",
+    "description": "California state tax agency starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "licensingPortal": {
+    "agencyName": "CalGold",
+    "url": "https://calgold.ca.gov/",
+    "description": "California permits and licenses starting point by location and activity.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "economicDevelopmentAgency": {
+    "agencyName": "California Governor's Office of Business and Economic Development",
+    "url": "https://business.ca.gov/resources/small-business-innovation-and-entrepreneurship/",
+    "description": "California GO-Biz and CalOSBA resource starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "workforceAgency": {
+    "agencyName": "California Employment Development Department",
+    "url": "https://edd.ca.gov/en/payroll_taxes/",
+    "description": "California payroll tax and employer registration starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SBDC": {
+    "agencyName": "California Small Business Development Center Network",
+    "url": "https://www.californiasbdc.org/",
+    "description": "California SBDC advising network.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SCORE": {
+    "agencyName": "SCORE",
+    "url": "https://www.score.org/find-mentor",
+    "description": "SCORE mentor locator.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "VBOC": {
+    "agencyName": "SBA Veterans Business Outreach Center program",
+    "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+    "description": "SBA VBOC program information and locator starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "commonBusinessSetupTasks": [
+    {
+      "id": "ca-entity-formation",
+      "stateCode": "CA",
+      "title": "Review California entity formation in bizfile",
+      "category": "entity_formation",
+      "agency": "California Secretary of State",
+      "url": "https://www.sos.ca.gov/business-programs/bizfile/",
+      "description": "Use bizfile California to review, search, and file business-entity records.",
+      "eligibilityTags": [
+        "entity",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before using a new legal entity for banking, contracts, or tax accounts.",
+      "dependency": "Choose the intended legal structure with qualified legal and tax guidance.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record entity choice, filing date, entity ID, and professional review.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-business-name-search",
+      "stateCode": "CA",
+      "title": "Search California bizfile entity records",
+      "category": "business_name_search",
+      "agency": "California Secretary of State",
+      "url": "https://bizfileonline.sos.ca.gov/search/business",
+      "description": "Search California bizfile records before relying on a proposed entity name.",
+      "eligibilityTags": [
+        "name_search",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before formation filings or heavy branding spend.",
+      "dependency": "Prepare preferred and backup names.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record searched names and results. Entity-name availability is not trademark clearance.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-registered-agent",
+      "stateCode": "CA",
+      "title": "Confirm California agent-for-service-of-process requirements",
+      "category": "registered_agent",
+      "agency": "California Secretary of State",
+      "url": "https://www.sos.ca.gov/business-programs/business-entities/faqs",
+      "description": "Confirm agent-for-service-of-process requirements for the selected California entity.",
+      "eligibilityTags": [
+        "agent_for_service",
+        "entity",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "When forming and maintaining an entity.",
+      "dependency": "Choose intended legal structure.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the agent and supporting records.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-state-tax-registration",
+      "stateCode": "CA",
+      "title": "Review California tax-agency registration needs",
+      "category": "state_tax_registration",
+      "agency": "California Tax Service Center",
+      "url": "https://www.taxes.ca.gov/",
+      "description": "Use California tax-agency guidance to identify applicable state tax registrations.",
+      "eligibilityTags": [
+        "tax",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before taxable operations or hiring employees.",
+      "dependency": "Clarify entity, activity, EIN, and staffing.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record agencies, accounts, and filing cadence.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-sellers-permit",
+      "stateCode": "CA",
+      "title": "Determine whether a California seller's permit is required",
+      "category": "sales_tax_or_tpt",
+      "agency": "California Department of Tax and Fee Administration",
+      "url": "https://www.cdtfa.ca.gov/services/registration.htm",
+      "description": "Use CDTFA registration to determine whether a seller's permit or another permit, license, or account is required.",
+      "eligibilityTags": [
+        "sellers_permit",
+        "sales_tax",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "taxable_sales"
+      ],
+      "whenNeeded": "Before selling or leasing taxable tangible personal property or conducting another covered activity.",
+      "dependency": "Document products, activities, and locations.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record CDTFA determination, permit, and reporting cadence.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-local-license",
+      "stateCode": "CA",
+      "title": "Research California local permits and business licenses with CalGold",
+      "category": "local_business_license",
+      "agency": "California Governor's Office of Business and Economic Development",
+      "url": "https://calgold.ca.gov/",
+      "description": "Use CalGold as a starting point and verify city and county licenses directly with each applicable agency.",
+      "eligibilityTags": [
+        "local_license",
+        "calgold",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before local operations begin.",
+      "dependency": "Identify address, service area, and activities.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record local agencies contacted and written guidance.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-zoning",
+      "stateCode": "CA",
+      "title": "Verify California local zoning and occupancy rules",
+      "category": "zoning",
+      "agency": "Applicable California city or county planning department",
+      "url": "https://calgold.ca.gov/",
+      "description": "Use CalGold as a starting point and confirm zoning, occupancy, signage, and site rules locally.",
+      "eligibilityTags": [
+        "zoning",
+        "location",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "physical_location"
+      ],
+      "whenNeeded": "Before lease, site purchase, or build-out.",
+      "dependency": "Identify address and activity.",
+      "estimatedDifficulty": "high",
+      "founderNotes": "Record planning contact, address reviewed, and written response.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-economic-development",
+      "stateCode": "CA",
+      "title": "Review California GO-Biz and CalOSBA resources",
+      "category": "economic_development",
+      "agency": "California Governor's Office of Business and Economic Development",
+      "url": "https://business.ca.gov/resources/small-business-innovation-and-entrepreneurship/",
+      "description": "Research California small-business, innovation, and economic-development resources.",
+      "eligibilityTags": [
+        "economic_development",
+        "calosba",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before location or expansion commitments.",
+      "dependency": "Prepare concept and location summary.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record relevant programs and direct eligibility confirmations.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-targeted-resources",
+      "stateCode": "CA",
+      "title": "Research California targeted-business support",
+      "category": "targeted_business_resources",
+      "agency": "California Office of the Small Business Advocate",
+      "url": "https://calosba.ca.gov/",
+      "description": "Research current veteran, woman, minority, rural, and other targeted-business support using founder-selected attributes.",
+      "eligibilityTags": [
+        "veteran",
+        "woman_owned",
+        "minority_owned",
+        "rural",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before targeted-program applications.",
+      "dependency": "Use founder-selected attributes and verify criteria.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record researched programs and eligibility confirmations.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-sbdc",
+      "stateCode": "CA",
+      "title": "Contact California SBDC",
+      "category": "sbdc_score_vboc",
+      "agency": "California Small Business Development Center Network",
+      "url": "https://www.californiasbdc.org/",
+      "description": "Use California SBDC advising to review the concept, assumptions, and checklist.",
+      "eligibilityTags": [
+        "advising",
+        "sbdc",
+        "california"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending.",
+      "dependency": "Prepare current VentureForge outputs.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record office, counselor, meeting date, and actions.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-ein",
+      "stateCode": "CA",
+      "title": "Apply for an Employer Identification Number directly from the IRS",
+      "category": "ein",
+      "agency": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+      "description": "Use the IRS tool to determine whether the business needs an EIN and apply directly when appropriate. Form a planned legal entity with the state before requesting its EIN.",
+      "eligibilityTags": [
+        "federal",
+        "tax_id"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "After forming a planned legal entity and before banking, payroll, or tax registrations that require an EIN.",
+      "dependency": "Complete the entity-formation decision first.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Apply directly through IRS.gov. Record the EIN confirmation and do not pay a third-party website for an EIN.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-score",
+      "stateCode": "CA",
+      "title": "Research SCORE mentoring support",
+      "category": "sbdc_score_vboc",
+      "agency": "SCORE",
+      "url": "https://www.score.org/find-mentor",
+      "description": "Use SCORE's mentoring directory to find business-planning support and review the launch checklist with a mentor.",
+      "eligibilityTags": [
+        "advising",
+        "mentor"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending commitments.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the mentor contact and the assumptions reviewed.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-vboc",
+      "stateCode": "CA",
+      "title": "Research Veterans Business Outreach Center support",
+      "category": "sbdc_score_vboc",
+      "agency": "U.S. Small Business Administration",
+      "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+      "description": "Review SBA Veterans Business Outreach Center resources when veteran or military-community business assistance may be useful.",
+      "eligibilityTags": [
+        "advising",
+        "veteran",
+        "military_community"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning, especially when the founder wants veteran or military-community support.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record whether VBOC support is relevant and any counselor contact.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "ca-local-requirements-placeholder",
+      "stateCode": "CA",
+      "title": "Confirm California city/county requirements directly",
+      "category": "local_business_license",
+      "agency": "Applicable California city or county agency",
+      "description": "Some cities, counties, zoning offices, health authorities, and professional boards have requirements that cannot be confirmed from a statewide placeholder. Identify the operating address and contact the local agency directly.",
+      "eligibilityTags": [
+        "local",
+        "placeholder",
+        "ca"
+      ],
+      "industries": [],
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before operating locally, signing a lease, or relying on a local compliance assumption.",
+      "dependency": "Identify city, county, operating address, and business activity.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the local agency contacted, date, person or office, and written guidance. This item intentionally has no single statewide URL.",
+      "sourceReliability": "placeholder",
+      "needsVerification": true,
+      "lastVerifiedAt": "2026-06-04"
+    }
+  ],
+  "industrySpecificFlags": [
+    {
+      "id": "food_business",
+      "label": "Food, beverage, or health-department review",
+      "description": "Triggered when the business may prepare, serve, sell, or handle food or beverages.",
+      "applicability": [
+        "food_business"
+      ],
+      "tasks": [
+        {
+          "id": "ca-health",
+          "stateCode": "CA",
+          "title": "Verify California retail-food and local health requirements",
+          "category": "health_department",
+          "agency": "California Department of Public Health and applicable local environmental-health agency",
+          "url": "https://www.cdph.ca.gov/Programs/CEH/DFDCS/Pages/FDBPrograms/FoodSafetyProgram/RetailFoodProgram.aspx",
+          "description": "Food businesses must confirm local environmental-health plan-review, permit, inspection, and food-safety requirements.",
+          "eligibilityTags": [
+            "food",
+            "health",
+            "california"
+          ],
+          "industries": [
+            "food_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "food_business"
+          ],
+          "whenNeeded": "Before food preparation, equipment purchases, or launch.",
+          "dependency": "Document menu, preparation model, and locations.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record local authority, permits, inspections, and guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "liquor_business",
+      "label": "Alcohol or liquor licensing review",
+      "description": "Triggered when alcohol sales, service, or distribution may apply.",
+      "applicability": [
+        "liquor_business"
+      ],
+      "tasks": [
+        {
+          "id": "ca-liquor",
+          "stateCode": "CA",
+          "title": "Verify California alcoholic-beverage licensing",
+          "category": "liquor_license",
+          "agency": "California Department of Alcoholic Beverage Control",
+          "url": "https://www.abc.ca.gov/licensing/",
+          "description": "Confirm license requirements before selling, serving, or distributing alcohol.",
+          "eligibilityTags": [
+            "liquor",
+            "alcohol",
+            "california"
+          ],
+          "industries": [
+            "alcohol"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "liquor_business"
+          ],
+          "whenNeeded": "Before alcohol-related location or offer commitments.",
+          "dependency": "Define activity and location.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record license type, timeline, and agency guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "contractor_business",
+      "label": "Construction or contractor licensing review",
+      "description": "Triggered when construction, home improvement, installation, repair, or contractor work may apply.",
+      "applicability": [
+        "contractor_business"
+      ],
+      "tasks": [
+        {
+          "id": "ca-contractor",
+          "stateCode": "CA",
+          "title": "Verify California contractor-license requirements",
+          "category": "contractor_license",
+          "agency": "Contractors State License Board",
+          "url": "https://www.cslb.ca.gov/",
+          "description": "Confirm whether construction, repair, installation, or contracting work requires CSLB licensure.",
+          "eligibilityTags": [
+            "contractor",
+            "construction",
+            "california"
+          ],
+          "industries": [
+            "contracting"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "contractor_business"
+          ],
+          "whenNeeded": "Before advertising, bidding, or regulated work.",
+          "dependency": "Define work scope and qualifying individual.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record license classification and CSLB guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "professional_service",
+      "label": "Professional licensing review",
+      "description": "Triggered when regulated professional services may apply.",
+      "applicability": [
+        "professional_service"
+      ],
+      "tasks": [
+        {
+          "id": "ca-professional",
+          "stateCode": "CA",
+          "title": "Verify California professional licensing",
+          "category": "professional_license",
+          "agency": "California Department of Consumer Affairs",
+          "url": "https://www.dca.ca.gov/",
+          "description": "Identify the applicable board and confirm professional-license requirements.",
+          "eligibilityTags": [
+            "professional_license",
+            "california"
+          ],
+          "industries": [
+            "professional_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "professional_service"
+          ],
+          "whenNeeded": "Before regulated professional services are offered.",
+          "dependency": "Identify exact service and responsible credential holder.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record board, credential, renewal, and responsible professional.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "has_employees",
+      "label": "Employer, payroll, and workforce review",
+      "description": "Triggered when the business plans to hire employees or run payroll.",
+      "applicability": [
+        "has_employees"
+      ],
+      "tasks": [
+        {
+          "id": "ca-employer-registration",
+          "stateCode": "CA",
+          "title": "Register a California employer payroll-tax account",
+          "category": "employer_registration",
+          "agency": "California Employment Development Department",
+          "url": "https://edd.ca.gov/en/payroll_taxes/employers-payroll-tax-account-registration/",
+          "description": "Register an EDD employer payroll-tax account when the business hires employees and reaches the applicable registration threshold.",
+          "eligibilityTags": [
+            "employer",
+            "payroll",
+            "edd",
+            "california"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Within the EDD registration window after covered wage payments begin.",
+          "dependency": "Obtain EIN and document staffing.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record EDD account, first-payroll date, and reporting cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "ca-workers-comp",
+          "stateCode": "CA",
+          "title": "Obtain California workers-compensation insurance",
+          "category": "workers_compensation",
+          "agency": "California Division of Workers' Compensation",
+          "url": "https://www.dir.ca.gov/dwc/employer.htm",
+          "description": "California employers must confirm and obtain workers-compensation insurance, including when they have one employee.",
+          "eligibilityTags": [
+            "employer",
+            "workers_compensation",
+            "insurance",
+            "california"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Before employees begin work.",
+          "dependency": "Document roles and request insurance guidance.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record carrier, policy, effective date, and required notices.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "ca-unemployment",
+          "stateCode": "CA",
+          "title": "Review California unemployment-insurance payroll-tax duties",
+          "category": "unemployment_insurance",
+          "agency": "California Employment Development Department",
+          "url": "https://edd.ca.gov/en/payroll_taxes/",
+          "description": "Review EDD payroll-tax, unemployment-insurance, wage-reporting, and payment responsibilities.",
+          "eligibilityTags": [
+            "employer",
+            "unemployment",
+            "edd",
+            "california"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "When hiring employees and managing payroll.",
+          "dependency": "Establish employer payroll-tax account.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record reporting and payment cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    }
+  ],
+  "lastVerifiedAt": "2026-06-04",
+  "verifyWarning": "Verify with the official California state, local, and activity-specific agency before filing, spending money, signing a lease, hiring, or relying on this checklist.",
+  "sourceReliability": "official_curated",
+  "needsVerification": false
+}

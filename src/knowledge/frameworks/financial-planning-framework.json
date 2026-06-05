@@ -1,0 +1,78 @@
+{
+  "id": "financial-planning",
+  "name": "Traceable Financial Planning Framework",
+  "purpose": "Turn editable assumptions into startup-cost, cash-flow, break-even, runway, and scenario outputs that can be reviewed and corrected.",
+  "inputs": [
+    "startup costs",
+    "fixed monthly costs",
+    "variable costs",
+    "price per unit or service",
+    "expected sales",
+    "revenue streams",
+    "payroll",
+    "rent",
+    "utilities",
+    "insurance",
+    "licenses",
+    "equipment",
+    "inventory",
+    "marketing",
+    "loan payments",
+    "owner draw",
+    "tax estimate placeholder"
+  ],
+  "outputs": [
+    "startup-cost table",
+    "use-of-funds table",
+    "source-of-funds table",
+    "12-month profit and loss",
+    "3-year forecast",
+    "cash-flow forecast",
+    "break-even estimate",
+    "gross margin",
+    "net margin",
+    "runway",
+    "funding gap",
+    "conservative scenario",
+    "expected scenario",
+    "optimistic scenario",
+    "sensitivity notes"
+  ],
+  "questionsToAsk": [
+    "Which costs have quotes and which remain estimates?",
+    "What sales evidence supports the expected scenario?",
+    "How much cash remains after startup spending?",
+    "Which assumption most changes break-even or runway?"
+  ],
+  "scoringModel": [
+    "Score assumption completeness, quote coverage, revenue evidence, cash-flow visibility, scenario coverage, and sensitivity testing.",
+    "Require every calculated number to trace to an input or stated assumption.",
+    "Reduce confidence when expected revenue lacks pilot evidence.",
+    "Flag negative runway and unresolved funding gaps."
+  ],
+  "qualityChecks": [
+    "Keep assumptions editable.",
+    "Show formulas or calculation notes.",
+    "Include conservative, expected, and optimistic scenarios.",
+    "Keep tax values labeled as placeholders.",
+    "Encourage CPA or bookkeeper review."
+  ],
+  "suggestedDataSources": [
+    "founder inputs",
+    "supplier quotes",
+    "lease quotes",
+    "insurance quotes",
+    "pilot sales",
+    "lender terms",
+    "CPA review"
+  ],
+  "warnings": [
+    "Financial projections are estimates, not promises.",
+    "Tax placeholders are not tax advice."
+  ],
+  "pluginExtensionPoints": [
+    "financial_model",
+    "export_provider",
+    "analysis_engine"
+  ]
+}

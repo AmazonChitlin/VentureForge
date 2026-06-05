@@ -1,0 +1,73 @@
+{
+  "id": "website-generation",
+  "name": "Evidence-Aligned Website Framework",
+  "purpose": "Generate a basic website package that reuses the validated concept, customer analysis, differentiation, and marketing strategy.",
+  "inputs": [
+    "business name",
+    "brand style",
+    "target customer",
+    "products or services",
+    "location",
+    "contact information",
+    "hours",
+    "tone",
+    "call to action",
+    "value proposition",
+    "customer pain points",
+    "differentiators",
+    "SEO keywords",
+    "service area"
+  ],
+  "outputs": [
+    "homepage",
+    "about page",
+    "products or services page",
+    "contact page",
+    "FAQ page",
+    "SEO title",
+    "meta descriptions",
+    "local-business JSON-LD",
+    "Google Business Profile description",
+    "social bios",
+    "brand-voice guide",
+    "static HTML and CSS",
+    "Next.js page source",
+    "CMS copy blocks"
+  ],
+  "questionsToAsk": [
+    "Which customer benefit should the website lead with?",
+    "Which claims are supported by current evidence?",
+    "What should the visitor do next?",
+    "Which locations and service areas are accurate?"
+  ],
+  "scoringModel": [
+    "Score claim support, offer clarity, target-customer fit, local specificity, contact completeness, CTA clarity, and founder review status.",
+    "Reduce confidence for missing contact details or unsupported claims.",
+    "Reuse the strategy module instead of inventing a separate message.",
+    "Flag copy that requires proof before publication."
+  ],
+  "qualityChecks": [
+    "Keep one primary call to action.",
+    "Include local SEO metadata.",
+    "Include local-business schema when relevant.",
+    "Avoid unsupported performance claims.",
+    "Require founder review before export."
+  ],
+  "suggestedDataSources": [
+    "business concept",
+    "customer analysis",
+    "competitor analysis",
+    "strategy output",
+    "founder contact details",
+    "verified service-area notes"
+  ],
+  "warnings": [
+    "Generated copy is a draft and requires review before publication.",
+    "Do not publish unsupported legal, financial, or performance claims."
+  ],
+  "pluginExtensionPoints": [
+    "website_theme",
+    "export_provider",
+    "website_generator"
+  ]
+}

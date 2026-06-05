@@ -1,0 +1,60 @@
+{
+  "id": "strategy-execution",
+  "name": "Strategy Execution Framework",
+  "purpose": "Convert strategic choices into staged initiatives, evidence gates, owners, dependencies, and review cycles.",
+  "inputs": [
+    "strategic objective",
+    "target customer",
+    "value proposition",
+    "feasibility findings",
+    "founder constraints",
+    "capital constraints",
+    "compliance needs",
+    "operating requirements"
+  ],
+  "outputs": [
+    "strategy formulation",
+    "impact assessment",
+    "future state / target business design",
+    "initiative scoping and prioritization",
+    "roadmap and deployment planning",
+    "feedback loop and KPI review"
+  ],
+  "questionsToAsk": [
+    "What should happen before any large commitment?",
+    "Which capabilities are required for the target operating model?",
+    "What evidence closes each initiative?",
+    "Which KPI or pivot trigger should be reviewed weekly?"
+  ],
+  "scoringModel": [
+    "Score dependency clarity, owner clarity, evidence requirements, cost visibility, risk visibility, KPI linkage, and review cadence.",
+    "Prioritize validation, compliance, and cash-protection initiatives before expansion work.",
+    "Reduce confidence when an initiative has no completion evidence.",
+    "Require pivot triggers for major assumptions."
+  ],
+  "qualityChecks": [
+    "Complete strategy formulation before generating a launch roadmap.",
+    "Assess impact on time, capital, operations, licensing, staffing, supply chain, technology, marketing, sales, accounting, insurance, compliance, and customer experience.",
+    "Describe the target business design.",
+    "Create scoped and prioritized initiatives.",
+    "Map initiatives into today, this week, 30 days, 60 days, 90 days, 6 months, and 12 months.",
+    "Create weekly, monthly, and quarterly feedback loops."
+  ],
+  "suggestedDataSources": [
+    "feasibility report",
+    "strategic analysis",
+    "official compliance resources",
+    "cost quotes",
+    "pilot results",
+    "financial projections"
+  ],
+  "warnings": [
+    "Diagnose before operating.",
+    "Do not launch expensive initiatives before validation and compliance gates."
+  ],
+  "pluginExtensionPoints": [
+    "strategy_tool",
+    "export_provider",
+    "analysis_engine"
+  ]
+}

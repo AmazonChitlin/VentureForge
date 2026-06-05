@@ -1,0 +1,66 @@
+{
+  "id": "funding-readiness",
+  "name": "Funding Readiness Framework",
+  "purpose": "Assess whether a project is prepared to research and pursue suitable financing, grant, contracting, or bootstrap pathways without promising approval.",
+  "inputs": [
+    "business-plan completeness",
+    "financial-projection completeness",
+    "owner contribution",
+    "credit-readiness self-assessment",
+    "collateral notes",
+    "proof of concept",
+    "revenue evidence",
+    "market-research quality",
+    "use-of-funds clarity",
+    "entity readiness",
+    "ownership attributes"
+  ],
+  "outputs": [
+    "funding-readiness score",
+    "possible funding matches",
+    "fit reasons",
+    "caution reasons",
+    "eligibility checklist",
+    "documents needed",
+    "official-source links",
+    "next steps"
+  ],
+  "questionsToAsk": [
+    "What will the funds pay for?",
+    "Which pathway matches the use of funds and business maturity?",
+    "Which documents are missing?",
+    "What is the total cost and risk of the proposed capital?"
+  ],
+  "scoringModel": [
+    "Score plan completeness, projections, owner contribution, credit readiness, collateral readiness, proof strength, revenue evidence, research quality, use-of-funds clarity, and entity readiness.",
+    "Match pathways conservatively and explain uncertainty.",
+    "Use official program links before suggesting an application.",
+    "Do not rank venture capital highly for businesses that do not fit venture economics."
+  ],
+  "qualityChecks": [
+    "Include SBA loan pathways where relevant.",
+    "Include CDFI, community-bank, credit-union, state, local, contracting, equipment-finance, and bootstrap research paths.",
+    "Show documents needed.",
+    "Warn against predatory lending.",
+    "State that final eligibility belongs to the lender or program."
+  ],
+  "suggestedDataSources": [
+    "SBA loan pages",
+    "SBA Lender Match",
+    "Grants.gov",
+    "SAM.gov",
+    "CDFI Fund",
+    "state economic-development agencies",
+    "local lenders",
+    "official program pages"
+  ],
+  "warnings": [
+    "VentureForge does not guarantee loans, grants, contracting awards, or investment.",
+    "Compare terms and verify official eligibility before applying."
+  ],
+  "pluginExtensionPoints": [
+    "funding_provider",
+    "data_provider",
+    "analysis_engine"
+  ]
+}

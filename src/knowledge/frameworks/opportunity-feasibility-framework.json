@@ -1,0 +1,63 @@
+{
+  "id": "feasibility",
+  "name": "Opportunity Feasibility Framework",
+  "purpose": "Test whether an idea deserves deeper investment by making customer, market, cost, compliance, and proof assumptions visible.",
+  "inputs": [
+    "business concept",
+    "customer need evidence",
+    "market demand evidence",
+    "competitor evidence",
+    "founder fit",
+    "startup cost estimates",
+    "funding need",
+    "operational requirements",
+    "regulatory notes",
+    "proof of concept"
+  ],
+  "outputs": [
+    "feasibility score",
+    "recommendation",
+    "top strengths",
+    "top weaknesses",
+    "critical assumptions",
+    "research needed",
+    "validation steps",
+    "spending gates"
+  ],
+  "questionsToAsk": [
+    "What result would make the founder pause or change direction?",
+    "Which commitment is expensive to reverse?",
+    "What is the smallest useful paid or behavioral test?",
+    "Is the startup budget realistic for the founder's available capital?"
+  ],
+  "scoringModel": [
+    "Score customer need, demand, market size, saturation, differentiation, founder fit, cost feasibility, funding feasibility, operational complexity, regulatory complexity, margin potential, scalability, proof strength, risk, and local opportunity.",
+    "Weight observed purchases and repeat purchases above stated interest.",
+    "Return insufficient-data status when core evidence is missing.",
+    "Require explicit spending gates before high-cost commitments."
+  ],
+  "qualityChecks": [
+    "Separate unknown evidence from negative evidence.",
+    "Show why each score changed.",
+    "Include at least one low-cost validation step.",
+    "Keep the recommendation plain and actionable."
+  ],
+  "suggestedDataSources": [
+    "customer interviews",
+    "small paid tests",
+    "Census APIs",
+    "BLS APIs",
+    "competitor fieldwork",
+    "supplier quotes",
+    "official licensing resources"
+  ],
+  "warnings": [
+    "Actual sales and repeat sales are stronger evidence than survey enthusiasm.",
+    "A favorable score does not remove business risk."
+  ],
+  "pluginExtensionPoints": [
+    "analysis_engine",
+    "financial_model",
+    "market_research_method"
+  ]
+}

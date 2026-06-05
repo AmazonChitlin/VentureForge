@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# Next.js / Vercel build output
+.next/
+out/
+.vercel/
+
+# environment and local secrets
+.env
+.env.local
+.env.production
+.env*.local
+
+# test and coverage output
+coverage/
+playwright-report/
+test-results/
+.nyc_output/
+
+# local database files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# logs and local build caches
+*.log
+tsconfig.tsbuildinfo
+
+# macOS external-drive metadata
+._*
+.DS_Store

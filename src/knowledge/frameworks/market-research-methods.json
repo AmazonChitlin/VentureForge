@@ -1,0 +1,82 @@
+{
+  "id": "market-research",
+  "name": "Mixed-Method Market Research Framework",
+  "purpose": "Combine public context with founder-led research and experiments so market claims remain traceable and useful.",
+  "inputs": [
+    "industry",
+    "NAICS code",
+    "geography",
+    "target customer",
+    "official metrics",
+    "manual source notes",
+    "primary research results",
+    "research dates"
+  ],
+  "outputs": [
+    "secondary research",
+    "official statistics",
+    "surveys",
+    "interviews",
+    "focus groups",
+    "observational research",
+    "ethnographic research",
+    "experiments",
+    "internet research",
+    "mixed methods",
+    "industry overview",
+    "local indicators",
+    "demand signals",
+    "pricing signals",
+    "business density notes",
+    "market size estimate",
+    "saturation estimate",
+    "confidence score",
+    "missing-data plan"
+  ],
+  "questionsToAsk": [
+    "Which evidence is local enough to guide this decision?",
+    "How recent is each source?",
+    "What behavior has been observed instead of assumed?",
+    "Which independent source could challenge the current conclusion?"
+  ],
+  "scoringModel": [
+    "Score source quality, recency, geographic specificity, industry specificity, sample size, primary-research availability, secondary-data availability, independent-source count, and consistency.",
+    "Reduce confidence when a result depends on one source.",
+    "Keep mock values outside confidence calculations.",
+    "Label derived estimates and record their assumptions."
+  ],
+  "qualityChecks": [
+    "Include secondary research.",
+    "Include official statistics.",
+    "Support surveys.",
+    "Support interviews.",
+    "Support focus groups.",
+    "Support observational research.",
+    "Support ethnographic research.",
+    "Support experiments.",
+    "Support internet research.",
+    "Support mixed methods.",
+    "Store source URLs and retrieval dates.",
+    "Do not present sample data as official."
+  ],
+  "suggestedDataSources": [
+    "Census ACS",
+    "Census County Business Patterns",
+    "Census Business Builder",
+    "BLS APIs",
+    "SBA market-research guidance",
+    "Data.gov",
+    "state economic-development agencies",
+    "trade associations",
+    "founder research notes"
+  ],
+  "warnings": [
+    "Public statistics add context but do not prove customer demand.",
+    "Internet research should respect source terms and favor official APIs."
+  ],
+  "pluginExtensionPoints": [
+    "data_provider",
+    "market_research_method",
+    "analysis_engine"
+  ]
+}

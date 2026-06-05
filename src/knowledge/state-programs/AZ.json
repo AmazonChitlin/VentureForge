@@ -1,0 +1,676 @@
+{
+  "stateCode": "AZ",
+  "stateName": "Arizona",
+  "entityFormationAgency": {
+    "agencyName": "Arizona Corporation Commission",
+    "url": "https://www.azcc.gov/corporations",
+    "description": "Arizona entity filings and corporation/LLC records.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "taxAgency": {
+    "agencyName": "Arizona Department of Revenue",
+    "url": "https://azdor.gov/business",
+    "description": "Arizona business tax registration and Transaction Privilege Tax starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "licensingPortal": {
+    "agencyName": "Arizona Commerce Authority Small Business Services",
+    "url": "https://www.azcommerce.com/small-business/",
+    "description": "Arizona small-business startup and local licensing starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "economicDevelopmentAgency": {
+    "agencyName": "Arizona Commerce Authority",
+    "url": "https://www.azcommerce.com/small-business/",
+    "description": "Arizona small-business and economic-development resources.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "workforceAgency": {
+    "agencyName": "Arizona Department of Economic Security",
+    "url": "https://des.az.gov/services/employment/unemployment-employer-tax",
+    "description": "Arizona unemployment insurance and employer tax starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SBDC": {
+    "agencyName": "Arizona Small Business Development Center Network",
+    "url": "https://www.azsbdc.net/",
+    "description": "Arizona SBDC advising network.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SCORE": {
+    "agencyName": "SCORE",
+    "url": "https://www.score.org/find-mentor",
+    "description": "SCORE mentor locator.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "VBOC": {
+    "agencyName": "SBA Veterans Business Outreach Center program",
+    "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+    "description": "SBA VBOC program information and locator starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "commonBusinessSetupTasks": [
+    {
+      "id": "az-entity-formation",
+      "stateCode": "AZ",
+      "title": "Review Arizona entity formation requirements",
+      "category": "entity_formation",
+      "agency": "Arizona Corporation Commission",
+      "url": "https://www.azcc.gov/corporations",
+      "description": "Review the Arizona Corporation Commission formation rules and file the selected entity type when needed.",
+      "eligibilityTags": [
+        "entity",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before using an entity name, opening entity accounts, or applying for an EIN for a new legal entity.",
+      "dependency": "Choose the intended legal structure with qualified legal and tax guidance.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the entity choice, filing date, confirmation number, and any professional review.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-business-name-search",
+      "stateCode": "AZ",
+      "title": "Search Arizona entity-name records",
+      "category": "business_name_search",
+      "agency": "Arizona Corporation Commission",
+      "url": "https://ecorp.azcc.gov/EntitySearch/Index",
+      "description": "Search Arizona Corporation Commission entity records before relying on a proposed entity name.",
+      "eligibilityTags": [
+        "name_search",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before filing formation documents or spending heavily on branding.",
+      "dependency": "Prepare preferred and backup names.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record searched names and results. Entity-name availability is not trademark clearance.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-registered-agent",
+      "stateCode": "AZ",
+      "title": "Confirm Arizona statutory-agent requirements",
+      "category": "registered_agent",
+      "agency": "Arizona Corporation Commission",
+      "url": "https://www.azcc.gov/faqs/BusinessServicesFAQs",
+      "description": "Confirm the statutory-agent requirement for the planned Arizona corporation or LLC and maintain an eligible Arizona address.",
+      "eligibilityTags": [
+        "statutory_agent",
+        "entity",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "When forming and maintaining an Arizona corporation or LLC.",
+      "dependency": "Choose the intended legal structure.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the statutory agent and acceptance documentation if the entity type requires it.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-state-tax-registration",
+      "stateCode": "AZ",
+      "title": "Review Arizona business-tax registration",
+      "category": "state_tax_registration",
+      "agency": "Arizona Department of Revenue",
+      "url": "https://azdor.gov/business",
+      "description": "Review Arizona Department of Revenue business-tax registration requirements for the planned activity.",
+      "eligibilityTags": [
+        "tax",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before conducting taxable activity or hiring employees.",
+      "dependency": "Clarify entity, activity, locations, and EIN needs.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the accounts required for the business activity and filing cadence.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-tpt",
+      "stateCode": "AZ",
+      "title": "Determine whether an Arizona TPT license is required",
+      "category": "sales_tax_or_tpt",
+      "agency": "Arizona Department of Revenue",
+      "url": "https://azdor.gov/transaction-privilege-tax-tpt",
+      "description": "Arizona transaction privilege tax is activity-specific. Review whether the business needs an ADOR TPT license and any city or occupational license.",
+      "eligibilityTags": [
+        "tpt",
+        "taxable_sales",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "taxable_sales"
+      ],
+      "whenNeeded": "Before starting taxable business activity.",
+      "dependency": "Confirm products, services, locations, and operating jurisdictions.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the ADOR determination, TPT account, locations, city requirements, and filing cadence.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-local-license",
+      "stateCode": "AZ",
+      "title": "Verify city and county business-license requirements",
+      "category": "local_business_license",
+      "agency": "Arizona Department of Revenue and applicable local agencies",
+      "url": "https://azdor.gov/transaction-privilege-tax-tpt",
+      "description": "Arizona local business and occupational-license requirements vary by city and activity. Confirm requirements with every operating jurisdiction.",
+      "eligibilityTags": [
+        "local_license",
+        "city",
+        "county",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before operating from, selling in, or regularly serving a local jurisdiction.",
+      "dependency": "Identify the operating address, service area, and selling locations.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record each city and county contacted and the license or written guidance received.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-zoning",
+      "stateCode": "AZ",
+      "title": "Verify zoning, occupancy, and site rules locally",
+      "category": "zoning",
+      "agency": "Applicable Arizona city or county planning department",
+      "url": "https://www.azcommerce.com/small-business/",
+      "description": "Confirm zoning, occupancy, signage, parking, home-occupation, and site-specific rules with the applicable local planning department.",
+      "eligibilityTags": [
+        "zoning",
+        "location",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "physical_location"
+      ],
+      "whenNeeded": "Before signing a lease, purchasing a site, or committing to build-out.",
+      "dependency": "Identify the proposed operating address and activity.",
+      "estimatedDifficulty": "high",
+      "founderNotes": "Record the local planning contact, parcel or address reviewed, and written response.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-economic-development",
+      "stateCode": "AZ",
+      "title": "Review Arizona small-business resources",
+      "category": "economic_development",
+      "agency": "Arizona Commerce Authority",
+      "url": "https://www.azcommerce.com/small-business/",
+      "description": "Review Arizona Commerce Authority small-business resources and any relevant local economic-development contacts.",
+      "eligibilityTags": [
+        "economic_development",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major location or expansion commitments.",
+      "dependency": "Prepare a concise business concept and location summary.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record relevant programs and local contacts. Verify eligibility directly.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-targeted-resources",
+      "stateCode": "AZ",
+      "title": "Research Arizona and SBA targeted-business support",
+      "category": "targeted_business_resources",
+      "agency": "Arizona Commerce Authority and U.S. Small Business Administration",
+      "url": "https://www.azcommerce.com/small-business/",
+      "description": "Research current veteran, woman, minority, rural, and other targeted-business support resources that may fit founder-selected attributes.",
+      "eligibilityTags": [
+        "veteran",
+        "woman_owned",
+        "minority_owned",
+        "rural",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before applying for a targeted program.",
+      "dependency": "Use only founder-selected attributes and verify each program's current criteria.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record programs researched and official eligibility confirmations. Self-identification is not certification.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-sbdc",
+      "stateCode": "AZ",
+      "title": "Contact Arizona SBDC",
+      "category": "sbdc_score_vboc",
+      "agency": "Arizona Small Business Development Center Network",
+      "url": "https://azsbdc.net/",
+      "description": "Use Arizona SBDC advising to review the concept, financial assumptions, and launch checklist.",
+      "eligibilityTags": [
+        "advising",
+        "sbdc",
+        "arizona"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending commitments.",
+      "dependency": "Prepare the current VentureForge outputs for review.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the SBDC office, counselor, meeting date, and follow-up actions.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-ein",
+      "stateCode": "AZ",
+      "title": "Apply for an Employer Identification Number directly from the IRS",
+      "category": "ein",
+      "agency": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+      "description": "Use the IRS tool to determine whether the business needs an EIN and apply directly when appropriate. Form a planned legal entity with the state before requesting its EIN.",
+      "eligibilityTags": [
+        "federal",
+        "tax_id"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "After forming a planned legal entity and before banking, payroll, or tax registrations that require an EIN.",
+      "dependency": "Complete the entity-formation decision first.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Apply directly through IRS.gov. Record the EIN confirmation and do not pay a third-party website for an EIN.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-score",
+      "stateCode": "AZ",
+      "title": "Research SCORE mentoring support",
+      "category": "sbdc_score_vboc",
+      "agency": "SCORE",
+      "url": "https://www.score.org/find-mentor",
+      "description": "Use SCORE's mentoring directory to find business-planning support and review the launch checklist with a mentor.",
+      "eligibilityTags": [
+        "advising",
+        "mentor"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending commitments.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the mentor contact and the assumptions reviewed.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-vboc",
+      "stateCode": "AZ",
+      "title": "Research Veterans Business Outreach Center support",
+      "category": "sbdc_score_vboc",
+      "agency": "U.S. Small Business Administration",
+      "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+      "description": "Review SBA Veterans Business Outreach Center resources when veteran or military-community business assistance may be useful.",
+      "eligibilityTags": [
+        "advising",
+        "veteran",
+        "military_community"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning, especially when the founder wants veteran or military-community support.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record whether VBOC support is relevant and any counselor contact.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "az-local-requirements-placeholder",
+      "stateCode": "AZ",
+      "title": "Confirm Arizona city/county requirements directly",
+      "category": "local_business_license",
+      "agency": "Applicable Arizona city or county agency",
+      "description": "Some cities, counties, zoning offices, health authorities, and professional boards have requirements that cannot be confirmed from a statewide placeholder. Identify the operating address and contact the local agency directly.",
+      "eligibilityTags": [
+        "local",
+        "placeholder",
+        "az"
+      ],
+      "industries": [],
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before operating locally, signing a lease, or relying on a local compliance assumption.",
+      "dependency": "Identify city, county, operating address, and business activity.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the local agency contacted, date, person or office, and written guidance. This item intentionally has no single statewide URL.",
+      "sourceReliability": "placeholder",
+      "needsVerification": true,
+      "lastVerifiedAt": "2026-06-04"
+    }
+  ],
+  "industrySpecificFlags": [
+    {
+      "id": "food_business",
+      "label": "Food, beverage, or health-department review",
+      "description": "Triggered when the business may prepare, serve, sell, or handle food or beverages.",
+      "applicability": [
+        "food_business"
+      ],
+      "tasks": [
+        {
+          "id": "az-health",
+          "stateCode": "AZ",
+          "title": "Verify food-safety and health-department requirements",
+          "category": "health_department",
+          "agency": "Arizona Department of Health Services and applicable local health authority",
+          "url": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/food-safety-environmental-services/index.php",
+          "description": "Food businesses must identify the applicable health authority and confirm plan-review, food-safety, commissary, inspection, and permit requirements.",
+          "eligibilityTags": [
+            "food",
+            "health",
+            "arizona"
+          ],
+          "industries": [
+            "food_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "food_business"
+          ],
+          "whenNeeded": "Before buying specialized equipment, preparing food for sale, or launching operations.",
+          "dependency": "Document menu, preparation model, vehicle or facility plan, and operating locations.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record the local health authority, permit path, inspection requirements, and commissary determination.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "liquor_business",
+      "label": "Alcohol or liquor licensing review",
+      "description": "Triggered when alcohol sales, service, or distribution may apply.",
+      "applicability": [
+        "liquor_business"
+      ],
+      "tasks": [
+        {
+          "id": "az-liquor",
+          "stateCode": "AZ",
+          "title": "Verify Arizona liquor-license requirements",
+          "category": "liquor_license",
+          "agency": "Arizona Department of Liquor Licenses and Control",
+          "url": "https://liquor.az.gov/",
+          "description": "Confirm liquor-license requirements before selling, serving, or distributing alcohol.",
+          "eligibilityTags": [
+            "liquor",
+            "alcohol",
+            "arizona"
+          ],
+          "industries": [
+            "alcohol"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "liquor_business"
+          ],
+          "whenNeeded": "Before committing to an alcohol-related offer, location, or event.",
+          "dependency": "Define the alcohol activity and operating location.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record the license series, local review, timeline, and agency guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "contractor_business",
+      "label": "Construction or contractor licensing review",
+      "description": "Triggered when construction, home improvement, installation, repair, or contractor work may apply.",
+      "applicability": [
+        "contractor_business"
+      ],
+      "tasks": [
+        {
+          "id": "az-contractor",
+          "stateCode": "AZ",
+          "title": "Verify Arizona contractor-license requirements",
+          "category": "contractor_license",
+          "agency": "Arizona Registrar of Contractors",
+          "url": "https://roc.az.gov/",
+          "description": "Confirm whether the planned construction, repair, installation, or contracting activity requires an Arizona contractor license.",
+          "eligibilityTags": [
+            "contractor",
+            "construction",
+            "arizona"
+          ],
+          "industries": [
+            "contracting"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "contractor_business"
+          ],
+          "whenNeeded": "Before advertising, bidding, or performing regulated contractor work.",
+          "dependency": "Define the scope of work and responsible qualifying party.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record the license classification and Registrar guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "professional_service",
+      "label": "Professional licensing review",
+      "description": "Triggered when regulated professional services may apply.",
+      "applicability": [
+        "professional_service"
+      ],
+      "tasks": [
+        {
+          "id": "az-professional",
+          "stateCode": "AZ",
+          "title": "Verify Arizona professional-license requirements",
+          "category": "professional_license",
+          "agency": "Arizona eLicense portal and applicable licensing board",
+          "url": "https://elicense.az.gov/",
+          "description": "Search the applicable Arizona licensing board and confirm whether the planned professional service requires an individual or business credential.",
+          "eligibilityTags": [
+            "professional_license",
+            "arizona"
+          ],
+          "industries": [
+            "professional_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "professional_service"
+          ],
+          "whenNeeded": "Before offering a regulated professional service.",
+          "dependency": "Identify the exact professional service and responsible license holder.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record the board, credential, renewal schedule, and responsible license holder.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "has_employees",
+      "label": "Employer, payroll, and workforce review",
+      "description": "Triggered when the business plans to hire employees or run payroll.",
+      "applicability": [
+        "has_employees"
+      ],
+      "tasks": [
+        {
+          "id": "az-employer-registration",
+          "stateCode": "AZ",
+          "title": "Register Arizona employer accounts when staffing begins",
+          "category": "employer_registration",
+          "agency": "Arizona Department of Economic Security",
+          "url": "https://des.az.gov/services/employment/unemployment-employer",
+          "description": "Review Arizona employer-registration, tax, wage-reporting, and unemployment-account requirements before or when hiring employees.",
+          "eligibilityTags": [
+            "employer",
+            "payroll",
+            "arizona"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Before or when hiring employees, based on agency requirements.",
+          "dependency": "Obtain the EIN and document the staffing plan.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record account numbers, registration dates, payroll provider, and filing cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "az-workers-comp",
+          "stateCode": "AZ",
+          "title": "Verify Arizona workers-compensation coverage",
+          "category": "workers_compensation",
+          "agency": "Industrial Commission of Arizona",
+          "url": "https://www.azica.gov/divisions/labor/workers-compensation",
+          "description": "Confirm workers-compensation coverage obligations and obtain appropriate insurance before covered employees begin work.",
+          "eligibilityTags": [
+            "employer",
+            "workers_compensation",
+            "insurance",
+            "arizona"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Before employees begin covered work.",
+          "dependency": "Document employee roles and request insurance guidance or quotes.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record carrier, policy number, effective date, and coverage confirmation.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "az-unemployment",
+          "stateCode": "AZ",
+          "title": "Review Arizona unemployment-insurance employer requirements",
+          "category": "unemployment_insurance",
+          "agency": "Arizona Department of Economic Security",
+          "url": "https://des.az.gov/services/employment/unemployment-employer",
+          "description": "Review unemployment-tax registration, reporting, payment, and employer-account responsibilities.",
+          "eligibilityTags": [
+            "employer",
+            "unemployment",
+            "arizona"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "When the business hires employees or otherwise meets agency registration requirements.",
+          "dependency": "Obtain the EIN and establish employer accounts.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record the unemployment account and reporting cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    }
+  ],
+  "lastVerifiedAt": "2026-06-04",
+  "verifyWarning": "Verify with the official Arizona state, local, and activity-specific agency before filing, spending money, signing a lease, hiring, or relying on this checklist.",
+  "sourceReliability": "official_curated",
+  "needsVerification": false
+}

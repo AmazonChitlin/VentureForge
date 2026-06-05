@@ -1,0 +1,677 @@
+{
+  "stateCode": "PA",
+  "stateName": "Pennsylvania",
+  "entityFormationAgency": {
+    "agencyName": "Pennsylvania Department of State",
+    "url": "https://www.pa.gov/services/dos/register-a-business",
+    "description": "Pennsylvania business entity registration starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "taxAgency": {
+    "agencyName": "Pennsylvania Department of Revenue",
+    "url": "https://www.pa.gov/services/revenue/register-my-business-for-taxes.html",
+    "description": "Pennsylvania business tax registration starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "licensingPortal": {
+    "agencyName": "PA Business One-Stop Shop",
+    "url": "https://business.pa.gov/register/registering-with-pennsylvania/local-permitting/",
+    "description": "Pennsylvania local permitting and business startup starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "economicDevelopmentAgency": {
+    "agencyName": "Pennsylvania Department of Community & Economic Development",
+    "url": "https://dced.pa.gov/business-assistance/",
+    "description": "Pennsylvania business assistance and economic-development resources.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "workforceAgency": {
+    "agencyName": "Pennsylvania Department of Labor & Industry",
+    "url": "https://www.pa.gov/agencies/dli.html",
+    "description": "Pennsylvania labor, unemployment, workers compensation, and employer resources.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SBDC": {
+    "agencyName": "Pennsylvania Small Business Development Centers",
+    "url": "https://www.pasbdc.org/",
+    "description": "Pennsylvania SBDC advising network.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "SCORE": {
+    "agencyName": "SCORE",
+    "url": "https://www.score.org/find-mentor",
+    "description": "SCORE mentor locator.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "VBOC": {
+    "agencyName": "SBA Veterans Business Outreach Center program",
+    "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+    "description": "SBA VBOC program information and locator starting point.",
+    "sourceReliability": "official_curated",
+    "lastVerifiedAt": "2026-06-04",
+    "needsVerification": false
+  },
+  "commonBusinessSetupTasks": [
+    {
+      "id": "pa-entity-formation",
+      "stateCode": "PA",
+      "title": "Register the Pennsylvania business entity when needed",
+      "category": "entity_formation",
+      "agency": "Pennsylvania Department of State",
+      "url": "https://www.pa.gov/services/dos/register-a-business",
+      "description": "Use Pennsylvania Business Filing Services to form or register the selected entity type.",
+      "eligibilityTags": [
+        "entity",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before using a new legal entity for banking, contracts, or tax accounts.",
+      "dependency": "Choose the intended legal structure with qualified legal and tax guidance.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record entity choice, filing date, confirmation, and professional review.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-business-name-search",
+      "stateCode": "PA",
+      "title": "Search Pennsylvania business-name records",
+      "category": "business_name_search",
+      "agency": "Pennsylvania Department of State",
+      "url": "https://file.dos.pa.gov/search/business",
+      "description": "Search Pennsylvania business records before relying on a proposed entity name.",
+      "eligibilityTags": [
+        "name_search",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before formation filings or heavy branding spend.",
+      "dependency": "Prepare preferred and backup names.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record searched names and results. Entity-name availability is not trademark clearance.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-registered-agent",
+      "stateCode": "PA",
+      "title": "Confirm Pennsylvania registered-office requirements",
+      "category": "registered_agent",
+      "agency": "Pennsylvania Department of State",
+      "url": "https://business.pa.gov/register/registering-with-pennsylvania/basic-business-registration-overview/",
+      "description": "Confirm the registered-office or commercial-registered-office-provider requirements for the planned entity.",
+      "eligibilityTags": [
+        "registered_office",
+        "entity",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "When forming and maintaining an entity.",
+      "dependency": "Choose the intended legal structure.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the registered-office arrangement and supporting records.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-state-tax-registration",
+      "stateCode": "PA",
+      "title": "Register Pennsylvania business-tax accounts through myPATH",
+      "category": "state_tax_registration",
+      "agency": "Pennsylvania Department of Revenue",
+      "url": "https://www.pa.gov/services/revenue/register-my-business-for-taxes.html",
+      "description": "Use Pennsylvania Online Business Tax Registration through myPATH to identify and register required state tax accounts.",
+      "eligibilityTags": [
+        "tax",
+        "mypath",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "Before conducting taxable activity or hiring employees.",
+      "dependency": "Clarify entity, activity, EIN, and staffing plan.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record registered accounts and filing cadence.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-sales-tax",
+      "stateCode": "PA",
+      "title": "Determine Pennsylvania sales-tax license requirements",
+      "category": "sales_tax_or_tpt",
+      "agency": "Pennsylvania Department of Revenue",
+      "url": "https://www.pa.gov/services/revenue/register-my-business-for-taxes.html",
+      "description": "Confirm whether the business must register for Sales, Use, and Hotel Occupancy Tax or another applicable account through myPATH.",
+      "eligibilityTags": [
+        "sales_tax",
+        "taxable_sales",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "taxable_sales"
+      ],
+      "whenNeeded": "Before selling taxable goods or services.",
+      "dependency": "Document products, services, and selling locations.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the Department of Revenue determination and license details.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-local-license",
+      "stateCode": "PA",
+      "title": "Verify Pennsylvania municipal licenses and permits",
+      "category": "local_business_license",
+      "agency": "Applicable Pennsylvania municipality",
+      "url": "https://business.pa.gov/register/registering-with-pennsylvania/local-permitting/",
+      "description": "Use Pennsylvania local-permitting guidance and confirm municipal licenses, permits, and taxes with the applicable locality.",
+      "eligibilityTags": [
+        "local_license",
+        "municipality",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before local operations begin.",
+      "dependency": "Identify operating address and service area.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record each municipality contacted and written guidance received.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-zoning",
+      "stateCode": "PA",
+      "title": "Verify local Pennsylvania zoning and occupancy rules",
+      "category": "zoning",
+      "agency": "Applicable Pennsylvania municipality",
+      "url": "https://business.pa.gov/register/registering-with-pennsylvania/local-permitting/",
+      "description": "Confirm zoning, occupancy, signage, and site-specific rules with the municipality.",
+      "eligibilityTags": [
+        "zoning",
+        "location",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "physical_location"
+      ],
+      "whenNeeded": "Before signing a lease, purchasing a site, or build-out.",
+      "dependency": "Identify proposed address and activity.",
+      "estimatedDifficulty": "high",
+      "founderNotes": "Record municipality, address reviewed, contact, and response.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-economic-development",
+      "stateCode": "PA",
+      "title": "Review Pennsylvania economic-development resources",
+      "category": "economic_development",
+      "agency": "Pennsylvania Department of Community & Economic Development",
+      "url": "https://dced.pa.gov/business-assistance/",
+      "description": "Research current Pennsylvania business-assistance and economic-development resources.",
+      "eligibilityTags": [
+        "economic_development",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before location or expansion commitments.",
+      "dependency": "Prepare business concept and location summary.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record relevant programs and direct eligibility confirmations.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-targeted-resources",
+      "stateCode": "PA",
+      "title": "Research Pennsylvania targeted-business support",
+      "category": "targeted_business_resources",
+      "agency": "Pennsylvania Department of General Services",
+      "url": "https://www.dgs.pa.gov/Small%20Diverse%20Businesses/Pages/default.aspx",
+      "description": "Research current small diverse business and other veteran, woman, minority, and targeted-business resources.",
+      "eligibilityTags": [
+        "veteran",
+        "woman_owned",
+        "minority_owned",
+        "targeted_support",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before targeted-program applications.",
+      "dependency": "Use founder-selected attributes and verify current criteria.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record programs researched and official eligibility confirmations.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-sbdc",
+      "stateCode": "PA",
+      "title": "Contact Pennsylvania SBDC",
+      "category": "sbdc_score_vboc",
+      "agency": "Pennsylvania Small Business Development Centers",
+      "url": "https://www.pasbdc.org/",
+      "description": "Use Pennsylvania SBDC advising to review the concept, assumptions, and checklist.",
+      "eligibilityTags": [
+        "advising",
+        "sbdc",
+        "pennsylvania"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending.",
+      "dependency": "Prepare current VentureForge outputs.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record office, counselor, meeting date, and actions.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-ein",
+      "stateCode": "PA",
+      "title": "Apply for an Employer Identification Number directly from the IRS",
+      "category": "ein",
+      "agency": "Internal Revenue Service",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+      "description": "Use the IRS tool to determine whether the business needs an EIN and apply directly when appropriate. Form a planned legal entity with the state before requesting its EIN.",
+      "eligibilityTags": [
+        "federal",
+        "tax_id"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "After forming a planned legal entity and before banking, payroll, or tax registrations that require an EIN.",
+      "dependency": "Complete the entity-formation decision first.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Apply directly through IRS.gov. Record the EIN confirmation and do not pay a third-party website for an EIN.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-score",
+      "stateCode": "PA",
+      "title": "Research SCORE mentoring support",
+      "category": "sbdc_score_vboc",
+      "agency": "SCORE",
+      "url": "https://www.score.org/find-mentor",
+      "description": "Use SCORE's mentoring directory to find business-planning support and review the launch checklist with a mentor.",
+      "eligibilityTags": [
+        "advising",
+        "mentor"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning and before major spending commitments.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record the mentor contact and the assumptions reviewed.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-vboc",
+      "stateCode": "PA",
+      "title": "Research Veterans Business Outreach Center support",
+      "category": "sbdc_score_vboc",
+      "agency": "U.S. Small Business Administration",
+      "url": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program",
+      "description": "Review SBA Veterans Business Outreach Center resources when veteran or military-community business assistance may be useful.",
+      "eligibilityTags": [
+        "advising",
+        "veteran",
+        "military_community"
+      ],
+      "industries": [],
+      "lastVerifiedAt": "2026-06-02",
+      "sourceType": "official",
+      "applicability": [
+        "always"
+      ],
+      "whenNeeded": "During planning, especially when the founder wants veteran or military-community support.",
+      "dependency": "None.",
+      "estimatedDifficulty": "low",
+      "founderNotes": "Record whether VBOC support is relevant and any counselor contact.",
+      "sourceReliability": "official_curated",
+      "needsVerification": false
+    },
+    {
+      "id": "pa-local-requirements-placeholder",
+      "stateCode": "PA",
+      "title": "Confirm Pennsylvania city/county requirements directly",
+      "category": "local_business_license",
+      "agency": "Applicable Pennsylvania city or county agency",
+      "description": "Some cities, counties, zoning offices, health authorities, and professional boards have requirements that cannot be confirmed from a statewide placeholder. Identify the operating address and contact the local agency directly.",
+      "eligibilityTags": [
+        "local",
+        "placeholder",
+        "pa"
+      ],
+      "industries": [],
+      "sourceType": "official",
+      "applicability": [
+        "local_operations"
+      ],
+      "whenNeeded": "Before operating locally, signing a lease, or relying on a local compliance assumption.",
+      "dependency": "Identify city, county, operating address, and business activity.",
+      "estimatedDifficulty": "moderate",
+      "founderNotes": "Record the local agency contacted, date, person or office, and written guidance. This item intentionally has no single statewide URL.",
+      "sourceReliability": "placeholder",
+      "needsVerification": true,
+      "lastVerifiedAt": "2026-06-04"
+    }
+  ],
+  "industrySpecificFlags": [
+    {
+      "id": "food_business",
+      "label": "Food, beverage, or health-department review",
+      "description": "Triggered when the business may prepare, serve, sell, or handle food or beverages.",
+      "applicability": [
+        "food_business"
+      ],
+      "tasks": [
+        {
+          "id": "pa-health",
+          "stateCode": "PA",
+          "title": "Verify Pennsylvania retail-food-facility requirements",
+          "category": "health_department",
+          "agency": "Pennsylvania Department of Agriculture and applicable local health authority",
+          "url": "https://www.pa.gov/agencies/pda/food-safety/food-safety-retail-food-facilities-and-restaurants.html",
+          "description": "Confirm retail-food-facility licensing, plan-review, inspection, and local health requirements.",
+          "eligibilityTags": [
+            "food",
+            "health",
+            "pennsylvania"
+          ],
+          "industries": [
+            "food_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "food_business"
+          ],
+          "whenNeeded": "Before preparing food for sale or buying specialized equipment.",
+          "dependency": "Document menu, preparation model, and locations.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record licensing authority, inspections, and written guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "liquor_business",
+      "label": "Alcohol or liquor licensing review",
+      "description": "Triggered when alcohol sales, service, or distribution may apply.",
+      "applicability": [
+        "liquor_business"
+      ],
+      "tasks": [
+        {
+          "id": "pa-liquor",
+          "stateCode": "PA",
+          "title": "Verify Pennsylvania liquor-license requirements",
+          "category": "liquor_license",
+          "agency": "Pennsylvania Liquor Control Board",
+          "url": "https://www.lcb.pa.gov/Licensing/Pages/default.aspx",
+          "description": "Confirm licensing requirements before selling, serving, or distributing alcohol.",
+          "eligibilityTags": [
+            "liquor",
+            "alcohol",
+            "pennsylvania"
+          ],
+          "industries": [
+            "alcohol"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "liquor_business"
+          ],
+          "whenNeeded": "Before committing to alcohol-related operations.",
+          "dependency": "Define alcohol activity and location.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record license type, timeline, local review, and agency guidance.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "contractor_business",
+      "label": "Construction or contractor licensing review",
+      "description": "Triggered when construction, home improvement, installation, repair, or contractor work may apply.",
+      "applicability": [
+        "contractor_business"
+      ],
+      "tasks": [
+        {
+          "id": "pa-contractor",
+          "stateCode": "PA",
+          "title": "Verify Pennsylvania contractor-registration requirements",
+          "category": "contractor_license",
+          "agency": "Pennsylvania Office of Attorney General",
+          "url": "https://www.attorneygeneral.gov/protect-yourself/home-improvement/",
+          "description": "Confirm whether the planned contractor activity triggers Pennsylvania registration or other state and local requirements.",
+          "eligibilityTags": [
+            "contractor",
+            "home_improvement",
+            "pennsylvania"
+          ],
+          "industries": [
+            "contracting"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "contractor_business"
+          ],
+          "whenNeeded": "Before advertising, bidding, or performing contractor work.",
+          "dependency": "Define the scope of work and locations.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record applicable registrations and local requirements.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "professional_service",
+      "label": "Professional licensing review",
+      "description": "Triggered when regulated professional services may apply.",
+      "applicability": [
+        "professional_service"
+      ],
+      "tasks": [
+        {
+          "id": "pa-professional",
+          "stateCode": "PA",
+          "title": "Verify Pennsylvania professional licensing",
+          "category": "professional_license",
+          "agency": "Pennsylvania Department of State",
+          "url": "https://www.pa.gov/agencies/dos/programs/professional-licensing.html",
+          "description": "Confirm whether the planned professional service requires a current individual or business credential.",
+          "eligibilityTags": [
+            "professional_license",
+            "pennsylvania"
+          ],
+          "industries": [
+            "professional_service"
+          ],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "professional_service"
+          ],
+          "whenNeeded": "Before offering a regulated professional service.",
+          "dependency": "Identify service and responsible license holder.",
+          "estimatedDifficulty": "high",
+          "founderNotes": "Record board, credential, renewal date, and responsible professional.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    },
+    {
+      "id": "has_employees",
+      "label": "Employer, payroll, and workforce review",
+      "description": "Triggered when the business plans to hire employees or run payroll.",
+      "applicability": [
+        "has_employees"
+      ],
+      "tasks": [
+        {
+          "id": "pa-employer-registration",
+          "stateCode": "PA",
+          "title": "Register Pennsylvania employer accounts",
+          "category": "employer_registration",
+          "agency": "Pennsylvania Department of Revenue and Department of Labor & Industry",
+          "url": "https://www.pa.gov/services/revenue/register-my-business-for-taxes.html",
+          "description": "Use myPATH to register applicable employer-withholding and unemployment-compensation accounts and supply workers-compensation information.",
+          "eligibilityTags": [
+            "employer",
+            "payroll",
+            "mypath",
+            "pennsylvania"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Before or when hiring employees, based on agency requirements.",
+          "dependency": "Obtain EIN and document staffing plan.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record accounts, payroll provider, and filing cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "pa-workers-comp",
+          "stateCode": "PA",
+          "title": "Obtain Pennsylvania workers-compensation coverage",
+          "category": "workers_compensation",
+          "agency": "Pennsylvania Department of Labor & Industry",
+          "url": "https://www.pa.gov/agencies/dli/resources/for-employers-and-educators/workers--compensation-for-employers/workers--compensation-compliance.html",
+          "description": "Confirm mandatory workers-compensation coverage requirements and obtain coverage for employees.",
+          "eligibilityTags": [
+            "employer",
+            "workers_compensation",
+            "insurance",
+            "pennsylvania"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "Before employees begin covered work.",
+          "dependency": "Document employee roles and request insurance guidance.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record carrier, policy number, effective date, and required postings.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        },
+        {
+          "id": "pa-unemployment",
+          "stateCode": "PA",
+          "title": "Review Pennsylvania unemployment-compensation employer requirements",
+          "category": "unemployment_insurance",
+          "agency": "Pennsylvania Department of Labor & Industry",
+          "url": "https://www.pa.gov/agencies/dli/departments-offices/workers-and-employers/office-of-unemployment-compensation",
+          "description": "Review unemployment-compensation account, quarterly wage-reporting, and tax responsibilities.",
+          "eligibilityTags": [
+            "employer",
+            "unemployment",
+            "pennsylvania"
+          ],
+          "industries": [],
+          "lastVerifiedAt": "2026-06-02",
+          "sourceType": "official",
+          "applicability": [
+            "has_employees"
+          ],
+          "whenNeeded": "When hiring employees or otherwise meeting UC registration rules.",
+          "dependency": "Obtain EIN and establish employer accounts.",
+          "estimatedDifficulty": "moderate",
+          "founderNotes": "Record UC account and reporting cadence.",
+          "sourceReliability": "official_curated",
+          "needsVerification": false
+        }
+      ]
+    }
+  ],
+  "lastVerifiedAt": "2026-06-04",
+  "verifyWarning": "Verify with the official Pennsylvania state, local, and activity-specific agency before filing, spending money, signing a lease, hiring, or relying on this checklist.",
+  "sourceReliability": "official_curated",
+  "needsVerification": false
+}

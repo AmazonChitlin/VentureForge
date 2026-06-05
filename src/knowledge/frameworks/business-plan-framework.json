@@ -1,0 +1,74 @@
+{
+  "id": "business-plan",
+  "name": "Evidence-Aware Business Plan Framework",
+  "purpose": "Turn a business hypothesis into an editable planning document that connects evidence, assumptions, financial logic, funding needs, and launch actions.",
+  "inputs": [
+    "business concept",
+    "founder profile",
+    "market evidence",
+    "customer evidence",
+    "competitor analysis",
+    "operating model",
+    "financial assumptions",
+    "funding need",
+    "launch roadmap"
+  ],
+  "outputs": [
+    "Executive Summary",
+    "Business Concept",
+    "Company Description",
+    "Mission, Vision, and Values",
+    "Founder / Management Team",
+    "Industry Analysis",
+    "Market Research",
+    "Customer Analysis",
+    "Competitive Analysis",
+    "Product or Service Line",
+    "Business Model",
+    "Marketing and Sales Plan",
+    "Operations / Process Plan",
+    "Organization and Legal Structure",
+    "Technology and Systems Plan",
+    "Risk and Contingency Plan",
+    "Growth Plan",
+    "Funding Request",
+    "Financial Plan",
+    "Launch Roadmap",
+    "Appendix"
+  ],
+  "questionsToAsk": [
+    "What customer problem is important enough to solve?",
+    "Which claims are supported by evidence and which remain assumptions?",
+    "How does the business earn revenue and protect cash?",
+    "What must be verified before the founder makes hard-to-reverse commitments?"
+  ],
+  "scoringModel": [
+    "Score section completeness from 0 to 100.",
+    "Increase confidence when claims have current source notes.",
+    "Reduce confidence when financial claims do not trace to editable assumptions.",
+    "Flag sections that lack a concrete next action."
+  ],
+  "qualityChecks": [
+    "Keep plan sections editable and independently regenerable.",
+    "Label official data, founder input, estimates, and generated analysis separately.",
+    "Move detailed evidence and supporting documents into the appendix.",
+    "Keep lender-facing summaries concise and evidence-based."
+  ],
+  "suggestedDataSources": [
+    "SBA business-plan guidance",
+    "Census APIs",
+    "BLS APIs",
+    "state and local official resources",
+    "founder interviews",
+    "supplier quotes"
+  ],
+  "warnings": [
+    "A business plan is a decision tool, not a guarantee of success.",
+    "Legal, tax, accounting, insurance, and lending decisions require qualified review."
+  ],
+  "pluginExtensionPoints": [
+    "business_plan_section",
+    "export_provider",
+    "analysis_engine"
+  ]
+}

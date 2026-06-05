@@ -1,0 +1,60 @@
+{
+  "id": "strategy-analysis",
+  "name": "Strategic Analysis Framework",
+  "purpose": "Choose a testable position by connecting internal strengths, external conditions, customer evidence, and execution constraints.",
+  "inputs": [
+    "business concept",
+    "feasibility report",
+    "customer analysis",
+    "competitor analysis",
+    "market report",
+    "founder constraints",
+    "operating model"
+  ],
+  "outputs": [
+    "positioning strategy",
+    "SWOT",
+    "PESTLE",
+    "threat-opportunity profile",
+    "marketing mix",
+    "value-chain summary",
+    "business-model summary",
+    "KPI map"
+  ],
+  "questionsToAsk": [
+    "Which customer benefit is both valuable and provable?",
+    "Which external condition creates the largest opportunity or threat?",
+    "What must be true for the chosen position to work?",
+    "Which early KPI reveals whether the strategy is working?"
+  ],
+  "scoringModel": [
+    "Score position specificity, evidence linkage, fit with founder capacity, actionability, and KPI clarity.",
+    "Reduce confidence when the strategy depends on generic quality claims.",
+    "Increase confidence when each recommendation maps to evidence and an action.",
+    "Require a review cadence for major assumptions."
+  ],
+  "qualityChecks": [
+    "Include SWOT.",
+    "Include PESTLE.",
+    "Include a threat-opportunity profile.",
+    "Use four marketing Ps and add people, process, and physical evidence when relevant.",
+    "Keep the initial position narrow enough to test."
+  ],
+  "suggestedDataSources": [
+    "engine reports",
+    "customer research",
+    "competitor research",
+    "official state resources",
+    "BLS APIs",
+    "Census APIs"
+  ],
+  "warnings": [
+    "Strategy is a working choice that should change when evidence changes.",
+    "A broad list of ideas is not an executable strategy."
+  ],
+  "pluginExtensionPoints": [
+    "strategy_tool",
+    "analysis_engine",
+    "business_plan_section"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "risk-contingency",
+  "name": "Risk and Contingency Framework",
+  "purpose": "Turn uncertain assumptions into monitored risks, warning signs, mitigations, and practical contingency responses.",
+  "inputs": [
+    "market risks",
+    "customer-adoption risks",
+    "funding risks",
+    "cash-flow risks",
+    "regulatory risks",
+    "operational risks",
+    "supplier risks",
+    "staffing risks",
+    "technology risks",
+    "competition risks",
+    "founder-capacity risks",
+    "location risks",
+    "seasonality risks",
+    "economic risks"
+  ],
+  "outputs": [
+    "risk register",
+    "likelihood rating",
+    "impact rating",
+    "warning signs",
+    "mitigation actions",
+    "contingency plans",
+    "owners",
+    "review cadence",
+    "scenario responses"
+  ],
+  "questionsToAsk": [
+    "Which risk could materially reduce cash runway?",
+    "What warning sign appears before the impact becomes severe?",
+    "Which response preserves the founder's options?",
+    "Who owns the review and how often should it happen?"
+  ],
+  "scoringModel": [
+    "Score likelihood and impact separately.",
+    "Prioritize risks with high combined exposure.",
+    "Increase readiness when warning thresholds, owners, and contingencies are documented.",
+    "Update ratings when new evidence arrives."
+  ],
+  "qualityChecks": [
+    "Include demand-lower-than-expected scenario.",
+    "Include costs-higher-than-expected scenario.",
+    "Include funding-denied scenario.",
+    "Include competitor-response scenario.",
+    "Include licensing-delay scenario.",
+    "Include founder-time-shortage scenario.",
+    "Include supplier-failure scenario.",
+    "Include website-or-marketing-underperformance scenario."
+  ],
+  "suggestedDataSources": [
+    "feasibility report",
+    "financial projections",
+    "supplier terms",
+    "insurance review",
+    "official licensing resources",
+    "pilot results",
+    "KPI trends"
+  ],
+  "warnings": [
+    "Contingency planning reduces exposure but cannot remove risk.",
+    "Risk ratings should change as evidence changes."
+  ],
+  "pluginExtensionPoints": [
+    "analysis_engine",
+    "strategy_tool",
+    "export_provider"
+  ]
+}

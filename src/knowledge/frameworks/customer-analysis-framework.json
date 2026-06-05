@@ -1,0 +1,61 @@
+{
+  "id": "customer-analysis",
+  "name": "Customer Discovery Framework",
+  "purpose": "Replace vague customer descriptions with testable segment hypotheses, observed problems, objections, and purchase evidence.",
+  "inputs": [
+    "target customer hypothesis",
+    "customer problem",
+    "interview notes",
+    "survey results",
+    "observation notes",
+    "experiment results",
+    "purchase evidence"
+  ],
+  "outputs": [
+    "primary persona hypothesis",
+    "secondary personas",
+    "jobs to be done",
+    "pain points",
+    "buying motivations",
+    "objections",
+    "reach channels",
+    "early-adopter profile",
+    "discovery question set"
+  ],
+  "questionsToAsk": [
+    "When did the customer last experience the problem?",
+    "What alternative did the customer use?",
+    "What did the current solution cost in money, time, or frustration?",
+    "What would make the customer switch or decline?"
+  ],
+  "scoringModel": [
+    "Score evidence recency, behavioral specificity, segment fit, sample coverage, and purchase evidence.",
+    "Treat demographics as unknown until supported by data.",
+    "Increase confidence when observations and purchases agree with interview themes.",
+    "Reduce confidence when the persona relies on stereotypes."
+  ],
+  "qualityChecks": [
+    "Record customer language without inventing demographic details.",
+    "Capture objections and alternatives.",
+    "Include a testable offer.",
+    "Identify the next customer-discovery action."
+  ],
+  "suggestedDataSources": [
+    "customer interviews",
+    "surveys",
+    "focus groups",
+    "observations",
+    "landing-page tests",
+    "pilot sales",
+    "Census ACS"
+  ],
+  "warnings": [
+    "Stated interest can overestimate real purchasing behavior.",
+    "Customer personas are working hypotheses, not fixed truths."
+  ],
+  "pluginExtensionPoints": [
+    "market_research_method",
+    "analysis_engine",
+    "website_generator"
+  ]
+}

@@ -1,0 +1,436 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String            @id @default(cuid())
+  email        String            @unique
+  workspaceKey String?           @unique
+  passwordHash String?
+  authProvider String            @default("credentials")
+  authProviderAccountHash String?
+  name         String?
+  projects     BusinessProject[]
+  dataSourceLogs DataSourceLog[]
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  @@unique([authProvider, authProviderAccountHash])
+}
+
+model BusinessProject {
+  id                 String                 @id @default(cuid())
+  userId             String
+  user               User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name               String
+  city               String
+  county             String
+  stateCode          String
+  zipCode            String
+  status             String                 @default("draft")
+  summary            String?
+  workspaceState     Json                   @default("{}")
+  guidedBuilderState Json?
+  founderProfile     FounderProfile?
+  businessIdea       BusinessIdea?
+  businessConcept    BusinessConcept?
+  intakeAnswers      IntakeAnswer[]
+  feasibility        FeasibilityReport?
+  marketReports      MarketResearchReport[]
+  personas           CustomerPersona[]
+  competitors        Competitor[]
+  strategy           StrategicAnalysis?
+  executionPlan      StrategyExecutionPlan?
+  businessPlans      BusinessPlan[]
+  projections        FinancialProjection[]
+  assumptions        FinancialAssumption[]
+  fundingMatches     FundingMatch[]
+  launchTasks        LaunchTask[]
+  risks              RiskItem[]
+  websiteProject     WebsiteProject?
+  exports            ExportRecord[]
+  dataSourceLogs     DataSourceLog[]
+  engineOutputs      EngineOutput[]
+  createdAt          DateTime               @default(now())
+  updatedAt          DateTime               @updatedAt
+
+  @@index([userId])
+  @@index([stateCode])
+}
+
+model FounderProfile {
+  id                   String          @id @default(cuid())
+  projectId            String          @unique
+  project              BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  founderName          String
+  founderExperience    String
+  skills               Json
+  industryExperience   String
+  startupCapital       Decimal
+  desiredFunding       Decimal
+  creditReadiness      String
+  riskTolerance        String
+  weeklyAvailableHours Int
+  launchTimeline       String
+  ownershipAttributes  Json
+}
+
+model BusinessIdea {
+  id                   String          @id @default(cuid())
+  projectId            String          @unique
+  project              BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  businessName         String
+  businessIdea         String
+  productOrService     String
+  customerProblem      String
+  proposedSolution     String
+  targetCustomer       String
+  businessModels       Json
+  industry             String
+  naicsGuess           String
+  knownCompetitors     Json
+  pricingIdea          String
+  expectedStartupCosts Decimal
+  staffingPlan         String
+  requiredEquipment    Json
+  licensingConcerns    Json
+  fundingNeed          String
+  websiteNeeds         String
+}
+
+model BusinessConcept {
+  id          String          @id @default(cuid())
+  projectId   String          @unique
+  project     BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  statement   String
+  content     Json
+  confidence  Int
+  assumptions Json
+  missingInfo Json
+  warnings    Json
+}
+
+model IntakeAnswer {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  field     String
+  value     Json
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@unique([projectId, field])
+}
+
+model EngineOutput {
+  id                    String          @id @default(cuid())
+  projectId             String
+  project               BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  moduleKey             String
+  result                Json
+  status                String          @default("completed")
+  startedAt             DateTime?
+  completedAt           DateTime?
+  failedAt              DateTime?
+  errorMessage          String?
+  sanitizedErrorMessage String?
+  retryAvailable        Boolean         @default(true)
+  createdAt             DateTime        @default(now())
+  updatedAt             DateTime        @updatedAt
+
+  @@unique([projectId, moduleKey])
+  @@index([projectId])
+  @@index([projectId, status])
+}
+
+model FeasibilityReport {
+  id             String          @id @default(cuid())
+  projectId      String          @unique
+  project        BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  totalScore     Int
+  recommendation String
+  content        Json
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model MarketResearchReport {
+  id         String           @id @default(cuid())
+  projectId  String
+  project    BusinessProject  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  content    Json
+  confidence Int
+  sources    ResearchSource[]
+  createdAt  DateTime         @default(now())
+
+  @@index([projectId])
+}
+
+model ResearchSource {
+  id          String               @id @default(cuid())
+  reportId    String
+  report      MarketResearchReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  title       String
+  sourceName  String
+  url         String?
+  sourceType  String
+  retrievedAt DateTime?
+  notes       String?
+
+  @@index([reportId])
+}
+
+model CustomerPersona {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name      String
+  content   Json
+  createdAt DateTime        @default(now())
+
+  @@index([projectId])
+}
+
+model Competitor {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name      String
+  url       String?
+  content   Json
+  createdAt DateTime        @default(now())
+
+  @@index([projectId])
+}
+
+model StrategicAnalysis {
+  id        String          @id @default(cuid())
+  projectId String          @unique
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  content   Json
+  swot      SWOTAnalysis?
+  pestle    PESTLEAnalysis?
+}
+
+model SWOTAnalysis {
+  id         String            @id @default(cuid())
+  strategyId String            @unique
+  strategy   StrategicAnalysis @relation(fields: [strategyId], references: [id], onDelete: Cascade)
+  content    Json
+}
+
+model PESTLEAnalysis {
+  id         String            @id @default(cuid())
+  strategyId String            @unique
+  strategy   StrategicAnalysis @relation(fields: [strategyId], references: [id], onDelete: Cascade)
+  content    Json
+}
+
+model StrategyExecutionPlan {
+  id          String          @id @default(cuid())
+  projectId   String          @unique
+  project     BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  content     Json
+  initiatives Initiative[]
+}
+
+model Initiative {
+  id       String                @id @default(cuid())
+  planId   String
+  plan     StrategyExecutionPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  title    String
+  status   String
+  priority String
+  content  Json
+
+  @@index([planId])
+}
+
+model BusinessPlan {
+  id        String                @id @default(cuid())
+  projectId String
+  project   BusinessProject       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  planType  String
+  title     String
+  sections  BusinessPlanSection[]
+  createdAt DateTime              @default(now())
+  updatedAt DateTime              @updatedAt
+
+  @@index([projectId])
+}
+
+model BusinessPlanSection {
+  id         String       @id @default(cuid())
+  planId     String
+  plan       BusinessPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  sectionKey String
+  title      String
+  narrative  String
+  isLocked   Boolean      @default(false)
+  content    Json
+
+  @@unique([planId, sectionKey])
+}
+
+model FinancialProjection {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  scenario  String
+  content   Json
+  createdAt DateTime        @default(now())
+
+  @@index([projectId])
+}
+
+model FinancialAssumption {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  key       String
+  value     Decimal
+  notes     String?
+
+  @@unique([projectId, key])
+}
+
+model FundingOpportunity {
+  id             String         @id @default(cuid())
+  name           String
+  type           String
+  source         String
+  url            String
+  content        Json
+  matches        FundingMatch[]
+  lastVerifiedAt DateTime?
+}
+
+model FundingMatch {
+  id            String             @id @default(cuid())
+  projectId     String
+  project       BusinessProject    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  opportunityId String
+  opportunity   FundingOpportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  matchScore    Int
+  content       Json
+
+  @@unique([projectId, opportunityId])
+}
+
+model StateProgram {
+  id              String    @id @default(cuid())
+  stateCode       String
+  title           String
+  category        String
+  agency          String
+  url             String
+  description     String
+  eligibilityTags Json
+  industries      Json
+  lastVerifiedAt  DateTime?
+  sourceType      String
+
+  @@unique([stateCode, title])
+  @@index([stateCode])
+}
+
+model LaunchTask {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  title     String
+  horizon   String
+  status    String
+  content   Json
+
+  @@index([projectId])
+}
+
+model RiskItem {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  category  String
+  content   Json
+
+  @@index([projectId])
+}
+
+model WebsiteProject {
+  id        String          @id @default(cuid())
+  projectId String          @unique
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  content   Json
+  pages     WebsitePage[]
+}
+
+model WebsitePage {
+  id        String         @id @default(cuid())
+  websiteId String
+  website   WebsiteProject @relation(fields: [websiteId], references: [id], onDelete: Cascade)
+  slug      String
+  title     String
+  content   Json
+
+  @@unique([websiteId, slug])
+}
+
+model Resource {
+  id               String    @id @default(cuid())
+  title            String
+  sourceName       String
+  sourceType       String
+  url              String    @unique
+  category         String
+  state            String?
+  industry         String?
+  tags             Json
+  description      String
+  lastVerifiedAt   DateTime?
+  reliabilityLevel String
+  notes            String?
+}
+
+model PluginConfig {
+  id        String   @id @default(cuid())
+  pluginId  String   @unique
+  enabled   Boolean  @default(false)
+  config    Json
+  updatedAt DateTime @updatedAt
+}
+
+model ExportRecord {
+  id        String          @id @default(cuid())
+  projectId String
+  project   BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  type      String
+  path      String?
+  createdAt DateTime        @default(now())
+
+  @@index([projectId])
+}
+
+model DataSourceLog {
+  id          String          @id @default(cuid())
+  userId      String?
+  user        User?           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId   String
+  project     BusinessProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  providerId  String
+  action      String          @default("provider_run")
+  sourceType  String
+  status      String
+  requestMeta Json
+  createdAt   DateTime        @default(now())
+
+  @@index([userId])
+  @@index([projectId])
+  @@index([projectId, action])
+  @@index([providerId])
+}

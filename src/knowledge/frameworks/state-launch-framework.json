@@ -1,0 +1,70 @@
+{
+  "id": "state-launch",
+  "name": "State and Local Launch Framework",
+  "purpose": "Generate a location-aware launch checklist that points founders to official state and local agencies for verification.",
+  "inputs": [
+    "state",
+    "city",
+    "county",
+    "business activity",
+    "entity choice",
+    "operating address",
+    "employee plan",
+    "product or service category",
+    "licensing concerns"
+  ],
+  "outputs": [
+    "entity-formation tasks",
+    "name-search task",
+    "registered-agent task",
+    "EIN task",
+    "state-tax task",
+    "sales-tax task",
+    "local-license task",
+    "zoning task",
+    "activity-specific permit tasks",
+    "employer-registration tasks",
+    "insurance tasks",
+    "economic-development resources",
+    "SBDC, SCORE, and VBOC resources"
+  ],
+  "questionsToAsk": [
+    "Which entity structure is planned?",
+    "Will the business have employees?",
+    "Will the selected address trigger zoning, occupancy, or signage requirements?",
+    "Does the activity require health, liquor, contractor, or professional licensing?"
+  ],
+  "scoringModel": [
+    "Score official-link coverage, state specificity, local specificity, activity specificity, verification date, and founder-note completeness.",
+    "Keep unverified tasks visible.",
+    "Increase confidence when an official agency source was recently checked.",
+    "Require local verification before location commitments."
+  ],
+  "qualityChecks": [
+    "Use official state and local agency links.",
+    "Show when each task is needed.",
+    "Show dependencies.",
+    "Store founder notes.",
+    "Include the verify-with-agency warning."
+  ],
+  "suggestedDataSources": [
+    "secretary of state or corporation commission",
+    "state tax agency",
+    "state licensing portal",
+    "city and county portals",
+    "IRS",
+    "state workforce agency",
+    "SBDC",
+    "SCORE",
+    "VBOC"
+  ],
+  "warnings": [
+    "Verify with the official state and local agency before filing.",
+    "This checklist is planning support, not legal or tax advice."
+  ],
+  "pluginExtensionPoints": [
+    "state_resource",
+    "data_provider",
+    "analysis_engine"
+  ]
+}

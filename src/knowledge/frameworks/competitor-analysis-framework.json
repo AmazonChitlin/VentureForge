@@ -1,0 +1,60 @@
+{
+  "id": "competitor-analysis",
+  "name": "Competitive Landscape Framework",
+  "purpose": "Document direct competitors, indirect competitors, and substitute choices before selecting a market position.",
+  "inputs": [
+    "competitor records",
+    "competitor URLs",
+    "locations",
+    "offer descriptions",
+    "price observations",
+    "review themes",
+    "marketing channels",
+    "customer alternatives"
+  ],
+  "outputs": [
+    "competitive grid",
+    "direct competitors",
+    "indirect competitors",
+    "substitutes",
+    "barriers to entry",
+    "likely competitor responses",
+    "white-space hypotheses",
+    "differentiation recommendations"
+  ],
+  "questionsToAsk": [
+    "What does the customer use today?",
+    "Which alternatives are strongest and why?",
+    "Which customer need remains underserved?",
+    "Which differentiator can the founder prove?"
+  ],
+  "scoringModel": [
+    "Score record coverage, source-date recency, local relevance, price verification, substitute coverage, and customer-segment fit.",
+    "Reduce confidence when competitors are named without source notes.",
+    "Do not calculate market share without a credible source.",
+    "Use official business counts as context, not proof of saturation."
+  ],
+  "qualityChecks": [
+    "Include direct, indirect, and substitute options.",
+    "Record URL, observation date, and location where possible.",
+    "Separate perceived strengths from verified facts.",
+    "Tie differentiation recommendations to a customer benefit."
+  ],
+  "suggestedDataSources": [
+    "manual competitor fieldwork",
+    "competitor websites",
+    "customer interviews",
+    "Census County Business Patterns",
+    "state licensing directories",
+    "trade associations"
+  ],
+  "warnings": [
+    "Competitor counts alone do not prove demand or saturation.",
+    "Avoid unsupported claims about competitor revenue or market share."
+  ],
+  "pluginExtensionPoints": [
+    "data_provider",
+    "analysis_engine",
+    "strategy_tool"
+  ]
+}
